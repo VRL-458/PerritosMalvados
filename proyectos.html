@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Projects - Perritos Malvados</title>
+    <style>
+        /* Add your CSS styles here */
+    </style>
+</head>
+<body>
+    <h1>Projects</h1>
+    
+    <div class="projects-list">
+        {% for project in projects %}
+            <div class="project">
+                <h2>{{ project.NombreProyecto }}</h2>
+                <p><strong>Status:</strong> {{ project.EstadoProyecto }}</p>
+                <p><strong>Expected Completion Date:</strong> {{ project.FechaFinalizacionPrevista }}</p>
+                <!-- Add more project details here -->
+            </div>
+        {% empty %}
+            <p>No projects available.</p>
+        {% endfor %}
+    </div>
+</body>
+</html>

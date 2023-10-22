@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Acerca de Nosotros - Perritos Malvados</title>
+    <style>
+        body {
+            background-image: url('https://images5.alphacoders.com/647/647570.jpg'); /* estamos trabajando con direcciones web de las imagenes*/
+            background-size: cover;
+            font-family: 'Roboto', sans-serif;
+            color: #333;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1, h2, h3 {
+            color: #333;
+            background-color: #eee;
+            padding: 10px;
+            border-radius: 5px;
+            display: inline-block; /* Esto alinea los encabezados horizontalmente */
+        }
+
+        p {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+            border-radius: 5px;
+            text-align: left;
+            margin: 10px auto;
+            max-width: 800px;
+        }
+         .proyectos-en-proceso {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .proyecto {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+            width: 30%;
+            margin-bottom: 20px;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>Nuestra Historia</h1>
+    <p>Somos "Perritos Malvados", una empresa de diseño de interiores que nació en 2010. Fundada por Laura Pérez y Carlos Rodríguez, nuestra empresa se creó con la visión de transformar hogares en espacios únicos y acogedores.</p>
+
+    <h2>Misión y Valores</h2>
+    <p>Nuestra misión es crear diseños de interiores que reflejen la personalidad y el estilo de vida de nuestros clientes. Valoramos la creatividad, la atención al detalle y el compromiso con la satisfacción del cliente en cada proyecto que emprendemos.</p>
+
+    <h2>Nuestro Equipo</h2>
+    <p>Somos un equipo apasionado de diseñadores de interiores con experiencia en una variedad de estilos y enfoques. Desde diseñadores de interiores certificados hasta expertos en decoración, todos compartimos la misma pasión por el diseño excepcional.</p>
+
+    <h2>Proyectos Destacados</h2>
+    <p>Hemos tenido el privilegio de trabajar en una amplia gama de proyectos de diseño de interiores, desde remodelaciones de cocinas hasta diseños completos de casas. Cada proyecto es una oportunidad para transformar sueños en realidad.</p>
+
+    <h2>Reconocimientos</h2>
+    <p>Estamos orgullosos de haber recibido el premio "Mejor Diseño de Interiores" en la Feria de Diseño de este año. Este reconocimiento nos motiva a seguir elevando nuestros estándares de diseño.</p>
+
+    <h2>Nuestra Filosofía de Diseño</h2>
+    <p>Creemos en la creación de espacios que equilibren la estética con la funcionalidad. Nos especializamos en el diseño personalizado para cada cliente, ofreciendo soluciones únicas para sus necesidades y gustos.</p>
+
+    <h2>Contacto</h2>
+    <p>Si deseas conocer más acerca de nosotros o trabajar en un proyecto de diseño de interiores, ¡no dudes en contactarnos!</p>
+    <p>Correo Electrónico: info@perritosmalvados.com</p>
+    <p>Teléfono: (123) 456-7890</p>
+
+    <!-- Aquí podrías agregar secciones adicionales, como testimonios, proyectos anteriores, etc. -->
+
+    <h2>Proyectos en Proceso</h2>
+    <div class="proyectos-en-proceso">
+        {% for proyecto in proyectos_en_proceso%}
+            <div class="proyecto">
+                <h3>{{ proyecto.NombreProyecto }}</h3>
+                <p>{{ proyecto.EstadoProyecto }}<br>
+                    {{proyecto.FechaFinalizacionPrevista}}
+                </p>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

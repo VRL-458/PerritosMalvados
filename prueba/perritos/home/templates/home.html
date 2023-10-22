@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PERRITOS MALVADOS - Diseño de Interiores</title>
+    <link rel="stylesheet" href="static/home.css">
+
+</head>
+<body>
+
+    <header>
+        <h1>Bienvenido a PERRITOS MALVADOS</h1>
+        <nav>
+            <ul>
+                <li><a href="informacion/info/">Quiénes Somos</a></li>
+                <li><a href="#trabajos">Trabajos Realizados</a></li>
+                <li><a href="#pedidos">Pedidos</a></li>
+                 <li><a href="productos/pro/">Productos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="quienes-somos">
+        <h2>Quiénes Somos</h2>
+        <p>Aquí puedes agregar información sobre tu empresa.</p>
+    </section>
+
+    <section id="trabajos">
+        <h2>Trabajos Realizados</h2>
+        <p>Aquí puedes mostrar fotos y descripciones de los trabajos que has completado.</p>
+    </section>
+
+    <section id="pedidos">
+        <h2>Pedidos</h2>
+        <form action="procesar_pedido.php" method="POST">
+            <!-- Aquí puedes añadir campos para el formulario de pedidos -->
+            <button type="submit">Enviar Pedido</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 PERRITOS MALVADOS - Diseño de Interiores</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

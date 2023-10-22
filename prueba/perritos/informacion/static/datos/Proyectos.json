@@ -1,0 +1,82 @@
+[
+    {
+        "ClienteID": 1,
+        "EstadoProyecto": "En Progreso",
+        "FechaFinalizacionPrevista": "2023-03-01",
+        "FechaInicio": "2023-01-01",
+        "NombreProyecto": "Proyecto A",
+        "ProyectoID": 1
+    },
+    {
+        "ClienteID": 2,
+        "EstadoProyecto": "En Progreso",
+        "FechaFinalizacionPrevista": "2023-04-01",
+        "FechaInicio": "2023-02-01",
+        "NombreProyecto": "Proyecto B",
+        "ProyectoID": 2
+    },
+    {
+        "ClienteID": 3,
+        "EstadoProyecto": "En Progreso",
+        "FechaFinalizacionPrevista": "2023-05-01",
+        "FechaInicio": "2023-03-01",
+        "NombreProyecto": "Proyecto C",
+        "ProyectoID": 3
+    },
+    {
+        "ClienteID": 4,
+        "EstadoProyecto": "En Progreso",
+        "FechaFinalizacionPrevista": "2023-06-01",
+        "FechaInicio": "2023-04-01",
+        "NombreProyecto": "Proyecto D",
+        "ProyectoID": 4
+    },
+    {
+        "ClienteID": 5,
+        "EstadoProyecto": "En Progreso",
+        "FechaFinalizacionPrevista": "2023-07-01",
+        "FechaInicio": "2023-05-01",
+        "NombreProyecto": "Proyecto E",
+        "ProyectoID": 5
+    },
+    {
+        "ClienteID": 6,
+        "EstadoProyecto": "En Progreso",
+        "FechaFinalizacionPrevista": "2023-08-01",
+        "FechaInicio": "2023-06-01",
+        "NombreProyecto": "Proyecto F",
+        "ProyectoID": 6
+    },
+    {
+        "ClienteID": 7,
+        "EstadoProyecto": "En Progreso",
+        "FechaFinalizacionPrevista": "2023-09-01",
+        "FechaInicio": "2023-07-01",
+        "NombreProyecto": "Proyecto G",
+        "ProyectoID": 7
+    },
+    {
+        "ClienteID": 8,
+        "EstadoProyecto": "En Progreso",
+        "FechaFinalizacionPrevista": "2023-10-01",
+        "FechaInicio": "2023-08-01",
+        "NombreProyecto": "Proyecto H",
+        "ProyectoID": 8
+    },
+    {
+        "ClienteID": 9,
+        "EstadoProyecto": "En Progreso",
+        "FechaFinalizacionPrevista": "2023-11-01",
+        "FechaInicio": "2023-09-01",
+        "NombreProyecto": "Proyecto I",
+        "ProyectoID": 9
+    },
+    {
+        "ClienteID": 10,
+        "EstadoProyecto": "En Progreso",
+        "FechaFinalizacionPrevista": "2023-12-01",
+        "FechaInicio": "2023-10-01",
+        "NombreProyecto": "Proyecto J",
+        "ProyectoID": 10
+    }
+]

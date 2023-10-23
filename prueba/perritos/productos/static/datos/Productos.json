@@ -1,0 +1,92 @@
+[
+    {
+        "Categoria": "Categoría A",
+        "Descripcion": "Descripción 1",
+        "NombreProducto": "Sofa azul IKEA + lampara beige",
+        "Precio": 220,
+        "ProductoID": 1,
+        "Proveedor": "Proveedor A",
+        "URLImagen": "https://st4.depositphotos.com/1023934/37752/i/450/depositphotos_377527168-stock-photo interior-design-of-modern-living.jpg"
+    },
+    {
+        "Categoria": "Categoría B",
+        "Descripcion": "Descripción 2",
+        "NombreProducto": "Juego de living azul IKEA",
+        "Precio": 1100,
+        "ProductoID": 2,
+        "Proveedor": "Proveedor B",
+        "URLImagen": "https://media.adeo.com/media/2007020/media.jpeg?precrop=4000,2064,x0,y1216&amp;height=465&amp;quality=75"
+    },
+    {
+        "Categoria": "Categoría C",
+        "Descripcion": "Descripción 3",
+        "NombreProducto": "Juego de sofas para exterior blanco IKEA",
+        "Precio": 700,
+        "ProductoID": 3,
+        "Proveedor": "Proveedor C",
+        "URLImagen": "https://www.muebles-exterior.com/uploads/colecciones/set-eiger-ambiente-3pl.jpg"
+    },
+    {
+        "Categoria": "Categoría D",
+        "Descripcion": "Descripción 4",
+        "NombreProducto": "Sofa Palo de Rosa IKEA",
+        "Precio": 190,
+        "ProductoID": 4,
+        "Proveedor": "Proveedor D",
+        "URLImagen": "https://yolodecoro.pe/wp-content/uploads/2022/11/decor-banner-sala-4.webp"
+    },
+    {
+        "Categoria": "Categoría E",
+        "Descripcion": "Descripción 5",
+        "NombreProducto": "Juego de living blanco IKEA",
+        "Precio": 1500,
+        "ProductoID": 5,
+        "Proveedor": "Proveedor E",
+        "URLImagen": "https://www.elmueble.com/medio/2023/07/04/muebles-e-ideas-atemporales-para-decorar-el-salon_00000000_00546573_230704115604_1200x630.jpg"
+    },
+    {
+        "Categoria": "Categoría F",
+        "Descripcion": "Descripción 6",
+        "NombreProducto": "Juego de living Naranja IKEA",
+        "Precio": 1230,
+        "ProductoID": 6,
+        "Proveedor": "Proveedor F",
+        "URLImagen": "https://casafebuspuertorico.com/cdn/shop/files/Screenshot_20230516_174850_Instagram_600x452.jpg"
+    },
+    {
+        "Categoria": "Categoría G",
+        "Descripcion": "Descripción 7",
+        "NombreProducto": "Mueble Living Negro + Alfombra PROVENZA",
+        "Precio": 1400,
+        "ProductoID": 7,
+        "Proveedor": "Proveedor G",
+        "URLImagen": "https://mueblesalbura.com.co/wp-content/uploads/2021/02/sala-provenza-junior-portada.jpg"
+    },
+    {
+        "Categoria": "Categoría H",
+        "Descripcion": "Descripción 8",
+        "NombreProducto": "Sillon Plegable beige/cafe oscuro ALTACOM",
+        "Precio": 1500,
+        "ProductoID": 8,
+        "Proveedor": "Proveedor H",
+        "URLImagen": "https://http2.mlstatic.com/D_NQ_NP_794699-MEC70369543375_072023-O.webp"
+    },
+    {
+        "Categoria": "Categoría I",
+        "Descripcion": "Descripción 9",
+        "NombreProducto": "Sillon Rojo IKEA",
+        "Precio": 1200,
+        "ProductoID": 9,
+        "Proveedor": "Proveedor I",
+        "URLImagen": "https://img77.uenicdn.com/image/upload/v1612962334/business/4478e6dd-a780-4b27-8d99-0e4e1e6c7c24.jpg"
+    },
+    {
+        "Categoria": "Categoría J",
+        "Descripcion": "Descripción 10",
+        "NombreProducto": "Sillon Multicolor Dise&ntilde;o Unico",
+        "Precio": 900,
+        "ProductoID": 10,
+        "Proveedor": "Proveedor J",
+        "URLImagen": "https://images.homify.com/image/upload/c_scale,h_500,w_500/v1440576707/p/photo/image/849647/uszak.jpg"
+    }
+]

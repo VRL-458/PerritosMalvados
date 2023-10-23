@@ -70,16 +70,5 @@
 
     <!-- Aquí podrías agregar secciones adicionales, como testimonios, proyectos anteriores, etc. -->
 
-    <h2>Proyectos en Proceso</h2>
-    <div class="proyectos-en-proceso">
-        {% for proyecto in proyectos_en_proceso%}
-            <div class="proyecto">
-                <h3>{{ proyecto.NombreProyecto }}</h3>
-                <p>{{ proyecto.EstadoProyecto }}<br>
-                    {{proyecto.FechaFinalizacionPrevista}}
-                </p>
-            </div>
-        {% endfor %}
-    </div>
 </body>
 </html>

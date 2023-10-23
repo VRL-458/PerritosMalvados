@@ -5,7 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PERRITOS MALVADOS - Diseño de Interiores</title>
     <link rel="stylesheet" href="static/home.css">
-
+<style>
+body {
+  background-image: url('https://kasasdecoracion.com/blog/wp-content/uploads/cuadro-sofa-2048x1382.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+</style>
 </head>
 <body>
 
@@ -13,31 +20,38 @@
         <h1>Bienvenido a PERRITOS MALVADOS</h1>
         <nav>
             <ul>
+                <li><a href="usuario/usr/">Registro</a></li>
                 <li><a href="informacion/info/">Quiénes Somos</a></li>
-                <li><a href="#trabajos">Trabajos Realizados</a></li>
-                <li><a href="#pedidos">Pedidos</a></li>
-                 <li><a href="productos/pro/">Productos</a></li>
+                <li><a href="servicios/ser/">Servicios</a></li>
+                <li><a href="productos/pro/">Productos</a></li>
             </ul>
         </nav>
     </header>
 
-    <section id="quienes-somos">
-        <h2>Quiénes Somos</h2>
-        <p>Aquí puedes agregar información sobre tu empresa.</p>
+    <div class="contenido">
+        <div class="logo">
+            <img src="https://i.postimg.cc/RhSJhzPS/Screenshot-2023-10-22-190720.png" alt="Logo">
+        </div>
+        <div class="bienvenida">
+
+            <h2>Mensaje de Bienvenida</h2>
+            <p>BIENVENIDO A PERRITOS MALVADOS <br>
+            Desde el concepto hasta la realidad
+            Ofrezco servicios <br>de diseño de interiores a medida en la zona de Ciudad de Cochabamba.<br>
+            Colaboro con los clientes para crear espacios con gusto y con un verdadero factor sorpresa.
+            <br>Comunícate hoy mismo para programar una cita inicial..</p>
+        </div>
+    </div>
+
+    <section id="biografia">
+
     </section>
 
-    <section id="trabajos">
-        <h2>Trabajos Realizados</h2>
-        <p>Aquí puedes mostrar fotos y descripciones de los trabajos que has completado.</p>
-    </section>
+    <div class="imagen-fondo">
+        <h2>Mi Biografía</h2>
+        <p>Uso el poder del diseño para transformar incluso los lugares más simples en espacios increíbles. Como Diseñador(a) de interiores experimentado(a), trabajo en la industria desde el año 2000 y tengo una clientela leal y entusiasta compuesta por clientes privados y comerciales. Contáctame para obtener más información.</p>
 
-    <section id="pedidos">
-        <h2>Pedidos</h2>
-        <form action="procesar_pedido.php" method="POST">
-            <!-- Aquí puedes añadir campos para el formulario de pedidos -->
-            <button type="submit">Enviar Pedido</button>
-        </form>
-    </section>
+    </div>
 
     <footer>
         <p>&copy; 2023 PERRITOS MALVADOS - Diseño de Interiores</p>

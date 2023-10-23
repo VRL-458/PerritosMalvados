@@ -1,10 +1,115 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+	<title>NUESTROS PRODUCTOS &quot;PM DESIGN&quot;</title>
+	<style type="text/css">body {
+            text-align: center;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #000080;
+        }
+
+        p {
+            font-family: 'Georgia', serif;
+            font-size: 22px;
+        }
+
+        p.italic {
+            font-size: 24px;
+        }
+
+        p.disclaimer {
+            font-size: 14px;
+        }
+
+        .product {
+            display: inline-block;
+            margin: 20px;
+        }
+
+        .product img {
+            height: 260px;
+            width: 400px;
+            border: 10px solid;
+        }
+
+        .product-info {
+            font-family: 'Comic Sans MS', cursive;
+            font-size: 14px;
+        }
+	</style>
 </head>
 <body>
-$END$
+<h1><em><strong>NUESTROS PRODUCTOS &quot;PM DESIGN&quot;</strong></em></h1>
+
+<p><em><strong>ENVIOS GRATIS A TODA BOLIVIA!!!!</strong></em></p>
+
+<p class="italic"><em><strong>TE ENTREGAMOS EL PRODUCTO DIRECTAMENTE EN TU DOMICILIO!!!!</strong></em></p>
+
+<p class="disclaimer">(TODOS LOS PRODUCTOS SON TAL CUAL SE LOS VE EN LA FOTOGRAFIA)</p>
+
+<div class="product">
+  <img src="{{ productos.0.URLImagen }}" />
+  <p class="product-info">{{ productos.0.NombreProducto }}<br />
+  {{ productos.0.Precio }} bs <input name="ACarrito" type="button" value="Agregar al Carrito" /></p>
+</div>
+
+<div class="product">
+  <img src="{{ productos.1.URLImagen }}" />
+  <p class="product-info">{{ productos.1.NombreProducto }}<br />
+  {{ productos.1.Precio }} bs <input name="ACarrito2" type="button" value="Agregar al Carrito" /></p>
+</div>
+
+<div class="product">
+  <img src="{{ productos.2.URLImagen }}" />
+  <p class="product-info">{{ productos.2.NombreProducto }}<br />
+  {{ productos.2.Precio }} bs <input name="ACarrito3" type="button" value="Agregar al Carrito" /></p>
+</div>
+
+<div class="product">
+  <img src="{{ productos.3.URLImagen }}" />
+  <p class="product-info">{{ productos.3.NombreProducto }}<br />
+  {{ productos.3.Precio }} bs <input name="ACarrito4" type="button" value="Agregar al Carrito" /></p>
+</div>
+
+<div class="product">
+  <img src="{{ productos.4.URLImagen }}" />
+  <p class="product-info">{{ productos.4.NombreProducto }}<br />
+  {{ productos.4.Precio }} bs <input name="ACarrito5" type="button" value="Agregar al Carrito" /></p>
+</div>
+
+<div class="product">
+  <img src="{{ productos.5.URLImagen }}" />
+  <p class="product-info">{{ productos.5.NombreProducto }}<br />
+  {{ productos.5.Precio }} bs <input name="ACarrito6" type="button" value="Agregar al Carrito" /></p>
+</div>
+
+<div class="product">
+  <img src="{{ productos.6.URLImagen }}" />
+  <p class="product-info">{{ productos.6.NombreProducto }}<br />
+  {{ productos.6.Precio }} bs <input name="ACarrito7" type="button" value="Agregar al Carrito" /></p>
+</div>
+
+<div class="product">
+  <img src="{{ productos.7.URLImagen }}" />
+  <p class="product-info">{{ productos.7.NombreProducto }}<br />
+  {{ productos.7.Precio }} bs <input name="ACarrito8" type="button" value="Agregar al Carrito" /></p>
+</div>
+
+<div class="product">
+  <img src="{{ productos.8.URLImagen }}" />
+  <p class="product-info">{{ productos.8.NombreProducto }}<br />
+  {{ productos.8.Precio }} bs <input name="ACarrito9" type="button" value="Agregar al Carrito" /></p>
+</div>
+
+<div class="product">
+  <img src="{{ productos.9.URLImagen }}" />
+  <p class="product-info">{{ productos.9.NombreProducto }}<br />
+  {{ productos.9.Precio }} bs <input name="ACarrito10" type="button" value="Agregar al Carrito" /></p>
+</div>
+
 </body>
 </html>

@@ -1,8 +1,9 @@
 body {
     font-family: Arial, sans-serif;
+
 }
 
-header, section, footer {
+header {
     margin: 20px;
     padding: 20px;
     border: 1px solid #ccc;
@@ -14,24 +15,46 @@ nav ul {
     padding: 0;
 }
 
-nav ul li {
+ nav ul li {
     color: #bd1c1c;
     display: inline;
     margin-right: 20px;
 }
 
-nav ul li a {
-     text-decoration: none;
+ nav ul li a {
+    text-decoration: none;
 }
 
-button {
-    background-color: #4caf50;
-    color: #ffffff;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
+.contenido {
+    display: flex;
+    #justify-content: space-between;
+    align-items: center;
+    padding: 20px;
 }
 
-button:hover {
-    background-color: #45a049;
+.logo img {
+    max-width: 400px;
+}
+
+.bienvenida {
+    text-align: right;
+}
+
+.biografia, .imagen-fondo {
+    padding: 20px;
+    text-align: center;
+}
+
+.biografia h2, .biografia p {
+    text-align: center;
+}
+
+.imagen-fondo img {
+    width: 100%;
+}
+
+footer {
+    colo: #000000;
+    text-align: center;
+    padding: 100px;
 }

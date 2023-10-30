@@ -3,6 +3,7 @@ from . import views
 
 #URLConf
 urlpatterns = [
-    path('ser/', views.servicios)
+    path('ser/', views.servicios),
+    path('cotizacion/', views.cotizacion)
 
 ]

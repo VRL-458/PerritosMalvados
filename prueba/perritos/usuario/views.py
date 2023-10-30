@@ -7,6 +7,12 @@ from .forms import CreateUser, LoginForm
 from .models import Usuario
 def registro(request):
     return render(request, 'registro.html')
+def perfil(request):
+    return render(request, 'perfil.html')
+
+
+def ventas(request):
+    return render(request, 'venta.html')
 
 
 def login(request):

@@ -1,14 +1,64 @@
-<div class="login-container">
-    <h1>PERRITOS MALVADOS</h1>
-    <h2>Bienvenido/a!</h2>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('imagen_fondo.jpg');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+        }
+        .login-container {
+            max-width: 400px;
+            margin: 5% auto;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 8px;
+        }
+        h1 {
+            text-align: center;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        button {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>PERRITOS MALVADOS</h1>
 
-<form method="post" action="{% url 'login' %}">
-    {% csrf_token %}
-    {{ form.email.label_tag }} {{ form.email }}
-    {{ form.password.label_tag }} {{ form.password }}
-    <button class="login-button" type="submit">Iniciar Sesión</button>
-</form>
-{% if mensaje %}
-    <p>{{ mensaje }}</p>
-{% endif %}
-</div>
+        <form method="post" action="{% url 'login' %}">
+            {% csrf_token %}
+
+            <div class="form-group">
+                {{ form.email.label_tag }} {{ form.email }}
+            </div>
+
+            <div class="form-group">
+                {{ form.password.label_tag }} {{ form.password }}
+            </div>
+
+            <button class="btn btn-primary btn-lg mt-3" type="submit">Iniciar Sesión</button>
+        </form>
+
+        <div class="text-center mt-4">
+            {% if user.is_authenticated %}
+                <p>Has iniciado sesión como {{ user.username }}</p>
+            {% else %}
+                <p>No has iniciado sesión</p>
+            {%endif%}
+        </div>
+    </div>
+
+    <!-- Scripts Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

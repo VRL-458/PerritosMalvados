@@ -5,3 +5,6 @@ from .models import Servicios
 def servicios(request):
     servicios = Servicios.objects.all()
     return render(request, 'servicios.html', {"servicios": servicios})
+
+def cotizacion(request):
+    return render(request, 'cotizacion.html', )

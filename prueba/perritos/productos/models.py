@@ -4,7 +4,6 @@ from django.db import models
 
 
 class Categorias(models.Model):
-    id = models.IntegerField(primary_key=True)
     nombre = models.CharField(max_length=50)
 
     class Meta:
@@ -12,7 +11,6 @@ class Categorias(models.Model):
         db_table = 'categorias'
 
 class Productos(models.Model):
-    id = models.IntegerField(primary_key=True)
     nombre = models.CharField(max_length=50)
     precio = models.IntegerField()
     stock = models.IntegerField()

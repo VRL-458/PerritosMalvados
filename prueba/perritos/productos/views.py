@@ -1,13 +1,15 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 import json
+
+
+from .models import Categorias, Productos
+
+
 # Create your views here.
 
 def productos(request):
-
-    with open('productos/static/datos/Productos.json', 'r') as archivo:
-        data = json.load(archivo)
-
+    productos = Productos.objects.all()
+    return render(request, 'producto.html', {"productos":  productos})
 
 
-    return render(request, 'producto.html', {"productos":  data})

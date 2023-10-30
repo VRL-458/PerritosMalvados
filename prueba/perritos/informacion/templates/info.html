@@ -1,74 +1,151 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <title>Acerca de Nosotros - Perritos Malvados</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perritos Malvados</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
     <style>
         body {
-            background-image: url('https://images5.alphacoders.com/647/647570.jpg'); /* estamos trabajando con direcciones web de las imagenes*/
-            background-size: cover;
             font-family: 'Roboto', sans-serif;
-            color: #333;
-            text-align: center;
-            padding: 20px;
+            margin: 0;
+            background-color: #f5f5f5;
         }
 
-        h1, h2, h3 {
-            color: #333;
-            background-color: #eee;
-            padding: 10px;
-            border-radius: 5px;
-            display: inline-block; /* Esto alinea los encabezados horizontalmente */
-        }
-
-        p {
-            background-color: rgba(255, 255, 255, 0.8);
-            padding: 10px;
-            border-radius: 5px;
-            text-align: left;
-            margin: 10px auto;
-            max-width: 800px;
-        }
-         .proyectos-en-proceso {
+        header {
+            background-color: #2a2a2a;
+            padding: 15px 0;
             display: flex;
             justify-content: space-between;
+            align-items: center;
+            color: #f9e07f;
+            padding: 10px 30px;
         }
 
-        .proyecto {
-            background-color: #fff;
-            border: 1px solid #ccc;
-            padding: 10px;
-            border-radius: 5px;
-            width: 30%;
+        header h1 {
+            font-size: 24px;
+        }
+
+        nav {
+            display: flex;
+            gap: 15px;
+        }
+
+        nav a {
+            color: #f9e07f;
+            text-decoration: none;
+        }
+
+        .main-content {
+            padding: 30px;
+            text-align: center;
+        }
+
+        .main-content img {
+            width: 300px;
             margin-bottom: 20px;
         }
+
+        .team {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 40px;
+        }
+
+        .team-member {
+            width: 150px;
+        }
+
+        .team img {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+        }
+
+        .projects {
+            margin-top: 40px;
+        }
+
+        .slide {
+            width: 100%;
+            height: 250px;
+            background: #c4c4c4;
+            margin-top: 20px;
+        }
+
+        footer {
+            background-color: #2a2a2a;
+            padding: 20px 30px;
+            color: #f9e07f;
+            text-align: center;
+        }
+
+        .social-icons {
+            margin-top: 15px;
+        }
+
+        .social-icons a {
+            margin: 0 10px;
+            color: #f9e07f;
+        }
+
     </style>
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Nuestra Historia</h1>
-    <p>Somos "Perritos Malvados", una empresa de diseño de interiores que nació en 2010. Fundada por Laura Pérez y Carlos Rodríguez, nuestra empresa se creó con la visión de transformar hogares en espacios únicos y acogedores.</p>
+    <header>
+        <h1>PERRITOS MALVADOS</h1>
+        <nav>
+            <a href="/usuario/usr/">Registrar</a>
+            <a href="/usuario/login">Login</a>
+            <a href="#">Inicio</a>
+            <a href="/informacion/info/">Nosotros</a>
+            <a href="#">Proyectos</a>
+            <a href="#">Contacto</a>
+            <a href="/productos/pro/">Productos</a>
+            <a href="/servicios/ser">Servicios</a>
+        </nav>
+    </header>
 
-    <h2>Misión y Valores</h2>
-    <p>Nuestra misión es crear diseños de interiores que reflejen la personalidad y el estilo de vida de nuestros clientes. Valoramos la creatividad, la atención al detalle y el compromiso con la satisfacción del cliente en cada proyecto que emprendemos.</p>
+    <div class="main-content">
+        <img src="https://i.postimg.cc/RhSJhzPS/Screenshot-2023-10-22-190720.png" alt="Imagen representativa">
+        <h2>BIENVENIDO A PERRITOS MALVADOS</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
 
-    <h2>Nuestro Equipo</h2>
-    <p>Somos un equipo apasionado de diseñadores de interiores con experiencia en una variedad de estilos y enfoques. Desde diseñadores de interiores certificados hasta expertos en decoración, todos compartimos la misma pasión por el diseño excepcional.</p>
+        <h3>NUESTRO EQUIPO</h3>
+        <div class="team">
+            <div class="team-member">
+                <img src="path_to_team_member1" alt="Foto">
+                <p>Nombre</p>
+                <p>Lorem ipsum dolor sit amet...</p>
+            </div>
+            <div class="team-member">
+                <img src="path_to_team_member2" alt="Foto">
+                <p>Nombre</p>
+                <p>Lorem ipsum dolor sit amet...</p>
+            </div>
+            <div class="team-member">
+                <img src="path_to_team_member3" alt="Foto">
+                <p>Nombre</p>
+                <p>Lorem ipsum dolor sit amet...</p>
+            </div>
+        </div>
 
-    <h2>Proyectos Destacados</h2>
-    <p>Hemos tenido el privilegio de trabajar en una amplia gama de proyectos de diseño de interiores, desde remodelaciones de cocinas hasta diseños completos de casas. Cada proyecto es una oportunidad para transformar sueños en realidad.</p>
+        <h3>PROYECTOS</h3>
+        <p>Lorem ipsum dolor sit amet...</p>
+        <div class="slide"></div>
+    </div>
 
-    <h2>Reconocimientos</h2>
-    <p>Estamos orgullosos de haber recibido el premio "Mejor Diseño de Interiores" en la Feria de Diseño de este año. Este reconocimiento nos motiva a seguir elevando nuestros estándares de diseño.</p>
-
-    <h2>Nuestra Filosofía de Diseño</h2>
-    <p>Creemos en la creación de espacios que equilibren la estética con la funcionalidad. Nos especializamos en el diseño personalizado para cada cliente, ofreciendo soluciones únicas para sus necesidades y gustos.</p>
-
-    <h2>Contacto</h2>
-    <p>Si deseas conocer más acerca de nosotros o trabajar en un proyecto de diseño de interiores, ¡no dudes en contactarnos!</p>
-    <p>Correo Electrónico: info@perritosmalvados.com</p>
-    <p>Teléfono: (123) 456-7890</p>
-
-    <!-- Aquí podrías agregar secciones adicionales, como testimonios, proyectos anteriores, etc. -->
-
+    <footer>
+        <p>Perritos Malvados</p>
+        <p>design@perritosmalvados.com</p>
+        <p>Av Juan Pablo II, Cochabamba, Bolivia</p>
+        <p>+591 12345678</p>
+        <div class="social-icons">
+            <a href="#"><img src="path_to_facebook_icon" alt="Facebook"></a>
+            <a href="#"><img src="path_to_instagram_icon" alt="Instagram"></a>
+            <a href="#"><img src="path_to_twitter_icon" alt="Twitter"></a>
+        </div>
+    </footer>
 </body>
 </html>

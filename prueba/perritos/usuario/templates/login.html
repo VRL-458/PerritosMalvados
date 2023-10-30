@@ -1,0 +1,14 @@
+<div class="login-container">
+    <h1>PERRITOS MALVADOS</h1>
+    <h2>Bienvenido/a!</h2>
+
+<form method="post" action="{% url 'login' %}">
+    {% csrf_token %}
+    {{ form.email.label_tag }} {{ form.email }}
+    {{ form.password.label_tag }} {{ form.password }}
+    <button class="login-button" type="submit">Iniciar Sesión</button>
+</form>
+{% if mensaje %}
+    <p>{{ mensaje }}</p>
+{% endif %}
+</div>

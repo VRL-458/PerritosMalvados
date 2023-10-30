@@ -1,115 +1,263 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>NUESTROS PRODUCTOS &quot;PM DESIGN&quot;</title>
-	<style type="text/css">body {
-            text-align: center;
-            font-family: 'Courier New', Courier, monospace;
-        }
+  <title>NUESTROS PRODUCTOS "PM DESIGN"</title>
+  <style type="text/css">
+    body {
+      text-align: center;
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
 
-        h1 {
-            font-size: 36px;
-            color: #000080;
-        }
+    h1 {
+      font-size: 36px;
+      color: #333;
+      margin-top: 20px;
+    }
 
-        p {
-            font-family: 'Georgia', serif;
-            font-size: 22px;
-        }
+    p {
+      font-family: 'Georgia', serif;
+      font-size: 22px;
+      margin-top: 5px;
+    }
 
-        p.italic {
-            font-size: 24px;
-        }
+    p.italic {
+      font-style: italic;
+    }
 
-        p.disclaimer {
-            font-size: 14px;
-        }
+    p.disclaimer {
+      font-size: 14px;
+      color: #888;
+      margin-top: 5px;
+    }
 
-        .product {
-            display: inline-block;
-            margin: 20px;
-        }
+    .container {
+      max-width: 1200px;
+      margin: 20px auto;
+      overflow: hidden;
+      padding: 0 20px;
+    }
 
-        .product img {
-            height: 260px;
-            width: 400px;
-            border: 10px solid;
-        }
+    .products {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
 
-        .product-info {
-            font-family: 'Comic Sans MS', cursive;
-            font-size: 14px;
-        }
-	</style>
+    .product {
+      background: #fff;
+      border: 1px solid #ddd;
+      margin: 10px;
+      padding: 15px;
+      width: calc(33.333% - 30px);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .product:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .product img {
+      max-width: 100%;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      padding: 5px;
+      margin-bottom: 10px;
+    }
+
+    .product-info {
+      font-family: 'Arial', sans-serif;
+      font-size: 14px;
+      margin-top: 10px;
+    }
+
+    input[type="button"] {
+      border: none;
+      font-size: 14px;
+      padding: 10px 20px;
+      background-color: #28a745;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    input[type="button"]:hover {
+      background-color: #218838;
+    }
+
+  </style>
 </head>
 <body>
-<h1><em><strong>NUESTROS PRODUCTOS &quot;PM DESIGN&quot;</strong></em></h1>
+  <div class="container">
+    <h1><em><strong>NUESTROS PRODUCTOS "PM DESIGN"</strong></em></h1>
 
-<p><em><strong>ENVIOS GRATIS A TODA BOLIVIA!!!!</strong></em></p>
+    <p><em><strong>ENVIOS GRATIS A TODA BOLIVIA!!!!</strong></em></p>
 
-<p class="italic"><em><strong>TE ENTREGAMOS EL PRODUCTO DIRECTAMENTE EN TU DOMICILIO!!!!</strong></em></p>
+    <p class="italic"><em><strong>TE ENTREGAMOS EL PRODUCTO DIRECTAMENTE EN TU DOMICILIO!!!!</strong></em></p>
 
-<p class="disclaimer">(TODOS LOS PRODUCTOS SON TAL CUAL SE LOS VE EN LA FOTOGRAFIA)</p>
+    <p class="disclaimer">(TODOS LOS PRODUCTOS SON TAL CUAL SE LOS VE EN LA FOTOGRAFIA)</p>
 
-<div class="product">
-  <img src="{{ productos.0.URLImagen }}" />
-  <p class="product-info">{{ productos.0.NombreProducto }}<br />
-  {{ productos.0.Precio }} bs <input name="ACarrito" type="button" value="Agregar al Carrito" /></p>
-</div>
+    <div class="products">
+      <!-- Producto 1 -->
+      <div class="product">
+        <img src="{{ productos.0.imagen }}" alt="Imagen del producto" />
+        <p class="product-info">123{{ productos.0.nombre }}<br />
+          {{ productos.0.precio }} bs</p>
+        <input name="ACarrito" type="button" value="Agregar al Carrito" />
+      </div>
+      <!-- Producto 2 -->
+      <div class="product">
+        <img src="{{ productos.1.imagen }}" alt="Imagen del producto" />
+        <p class="product-info">{{ productos.1.nombre }}<br />
+          {{ productos.1.precio }} bs</p>
+        <input name="ACarrito" type="button" value="Agregar al Carrito" />
+      </div>
+        <!-- Producto 3 -->
+      <div class="product">
+        <img src="{{ productos.2.imagen }}" alt="Imagen del producto" />
+        <p class="product-info">{{ productos.2.nombre }}<br />
+          {{ productos.2.precio }} bs</p>
+        <input name="ACarrito" type="button" value="Agregar al Carrito" />
+      </div>
+                <!-- Producto 4 -->
+        <div class="product">
+          <img src="{{ productos.3.imagen }}" alt="Imagen del producto 4" />
+          <p class="product-info">{{ productos.3.nombre }}<br />
+            {{ productos.3.precio }} bs</p>
+          <input name="ACarrito" type="button" value="Agregar al Carrito" />
+        </div>
 
-<div class="product">
-  <img src="{{ productos.1.URLImagen }}" />
-  <p class="product-info">{{ productos.1.NombreProducto }}<br />
-  {{ productos.1.Precio }} bs <input name="ACarrito2" type="button" value="Agregar al Carrito" /></p>
-</div>
+        <!-- Producto 5 -->
+        <div class="product">
+          <img src="{{ productos.4.imagen }}" alt="Imagen del producto 5" />
+          <p class="product-info">{{ productos.4.nombre }}<br />
+            {{ productos.4.precio }} bs</p>
+          <input name="ACarrito" type="button" value="Agregar al Carrito" />
+        </div>
 
-<div class="product">
-  <img src="{{ productos.2.URLImagen }}" />
-  <p class="product-info">{{ productos.2.NombreProducto }}<br />
-  {{ productos.2.Precio }} bs <input name="ACarrito3" type="button" value="Agregar al Carrito" /></p>
-</div>
 
-<div class="product">
-  <img src="{{ productos.3.URLImagen }}" />
-  <p class="product-info">{{ productos.3.NombreProducto }}<br />
-  {{ productos.3.Precio }} bs <input name="ACarrito4" type="button" value="Agregar al Carrito" /></p>
-</div>
+                <!-- Producto 6 -->
+        <div class="product">
+          <img src="{{ productos.5.imagen }}" alt="Imagen del producto 6" />
+          <p class="product-info">{{ productos.5.nombre }}<br />
+            {{ productos.5.precio }} bs</p>
+          <input name="ACarrito" type="button" value="Agregar al Carrito" />
+        </div>
 
-<div class="product">
-  <img src="{{ productos.4.URLImagen }}" />
-  <p class="product-info">{{ productos.4.NombreProducto }}<br />
-  {{ productos.4.Precio }} bs <input name="ACarrito5" type="button" value="Agregar al Carrito" /></p>
-</div>
+        <!-- Producto 7 -->
+        <div class="product">
+          <img src="{{ productos.6.imagen }}" alt="Imagen del producto 7" />
+          <p class="product-info">{{ productos.6.nombre }}<br />
+            {{ productos.6.precio }} bs</p>
+          <input name="ACarrito" type="button" value="Agregar al Carrito" />
+        </div>
 
-<div class="product">
-  <img src="{{ productos.5.URLImagen }}" />
-  <p class="product-info">{{ productos.5.NombreProducto }}<br />
-  {{ productos.5.Precio }} bs <input name="ACarrito6" type="button" value="Agregar al Carrito" /></p>
-</div>
+        <!-- Producto 8 -->
+        <div class="product">
+          <img src="{{ productos.7.imagen }}" alt="Imagen del producto 8" />
+          <p class="product-info">{{ productos.7.nombre }}<br />
+            {{ productos.7.precio }} bs</p>
+          <input name="ACarrito" type="button" value="Agregar al Carrito" />
+        </div>
 
-<div class="product">
-  <img src="{{ productos.6.URLImagen }}" />
-  <p class="product-info">{{ productos.6.NombreProducto }}<br />
-  {{ productos.6.Precio }} bs <input name="ACarrito7" type="button" value="Agregar al Carrito" /></p>
-</div>
+        <!-- Producto 9 -->
+        <div class="product">
+          <img src="{{ productos.8.imagen }}" alt="Imagen del producto 9" />
+          <p class="product-info">{{ productos.8.nombre }}<br />
+            {{ productos.8.precio }} bs</p>
+          <input name="ACarrito" type="button" value="Agregar al Carrito" />
+        </div>
 
-<div class="product">
-  <img src="{{ productos.7.URLImagen }}" />
-  <p class="product-info">{{ productos.7.NombreProducto }}<br />
-  {{ productos.7.Precio }} bs <input name="ACarrito8" type="button" value="Agregar al Carrito" /></p>
-</div>
+        <!-- Producto 10 -->
+        <div class="product">
+          <img src="{{ productos.9.imagen }}" alt="Imagen del producto 10" />
+          <p class="product-info">{{ productos.9.nombre }}<br />
+            {{ productos.9.precio }} bs</p>
+          <input name="ACarrito" type="button" value="Agregar al Carrito" />
+        </div>
 
-<div class="product">
-  <img src="{{ productos.8.URLImagen }}" />
-  <p class="product-info">{{ productos.8.NombreProducto }}<br />
-  {{ productos.8.Precio }} bs <input name="ACarrito9" type="button" value="Agregar al Carrito" /></p>
-</div>
+        <!-- Producto 11 -->
+        <div class="product">
+          <img src="{{ productos.10.imagen }}" alt="Imagen del producto 11" />
+          <p class="product-info">{{ productos.10.nombre }}<br />
+            {{ productos.10.precio }} bs</p>
+          <input name="ACarrito" type="button" value="Agregar al Carrito" />
+        </div>
 
-<div class="product">
-  <img src="{{ productos.9.URLImagen }}" />
-  <p class="product-info">{{ productos.9.NombreProducto }}<br />
-  {{ productos.9.Precio }} bs <input name="ACarrito10" type="button" value="Agregar al Carrito" /></p>
-</div>
+        <!-- Producto 12 -->
+        <div class="product">
+          <img src="{{ productos.11.imagen }}" alt="Imagen del producto 12" />
+          <p class="product-info">{{ productos.11.nombre }}<br />
+            {{ productos.11.precio }} bs</p>
+          <input name="ACarrito" type="button" value="Agregar al Carrito" />
+        </div>
 
+        <!-- Producto 13 -->
+        <div class="product">
+          <img src="{{ productos.12.imagen }}" alt="Imagen del producto 13" />
+          <p class="product-info">{{ productos.12.nombre }}<br />
+            {{ productos.12.precio }} bs</p>
+          <input name="ACarrito" type="button" value="Agregar al Carrito" />
+        </div>
+
+        <!-- Producto 14 -->
+        <div class="product">
+          <img src="{{ productos.13.imagen }}" alt="Imagen del producto 14" />
+          <p class="product-info">{{ productos.13.nombre }}<br />
+            {{ productos.13.precio }} bs</p>
+          <input name="ACarrito" type="button" value="Agregar al Carrito" />
+        </div>
+
+        <!-- Producto 15 -->
+        <div class="product">
+          <img src="{{ productos.14.imagen }}" alt="Imagen del producto 15" />
+          <p class="product-info">{{ productos.14.nombre }}<br />
+            {{ productos.14.precio }} bs</p>
+          <input name="ACarrito" type="button" value="Agregar al Carrito" />
+        </div>
+
+        <!-- Producto 16 -->
+        <div class="product">
+          <img src="{{ productos.15.imagen }}" alt="Imagen del producto 16" />
+          <p class="product-info">{{ productos.15.nombre }}<br />
+            {{ productos.15.precio }} bs</p>
+          <input name="ACarrito" type="button" value="Agregar al Carrito" />
+        </div>
+                <!-- Producto 17 -->
+        <div class="product">
+          <img src="{{ productos.16.imagen }}" alt="Imagen del producto 17" />
+          <p class="product-info">{{ productos.16.nombre }}<br />
+            {{ productos.16.precio }} bs</p>
+          <input name="ACarrito" type="button" value="Agregar al Carrito" />
+        </div>
+
+        <!-- Producto 18 -->
+        <div class="product">
+          <img src="{{ productos.17.imagen }}" alt="Imagen del producto 18" />
+          <p class="product-info">{{ productos.17.nombre }}<br />
+            {{ productos.17.precio }} bs</p>
+          <input name="ACarrito" type="button" value="Agregar al Carrito" />
+        </div>
+
+        <!-- Producto 19 -->
+          <div class="product">
+            <img src="{{ productos.18.imagen }}" alt="Imagen del producto" />
+            <p class="product-info">{{ productos.18.nombre }}<br />
+              {{ productos.18.precio }} bs</p>
+            <input name="ACarrito" type="button" value="Agregar al Carrito" />
+          </div>
+          <!-- Producto 20 -->
+          <div class="product">
+            <img src="{{ productos.19.imagen }}" alt="Imagen del producto" />
+            <p class="product-info">{{ productos.19.nombre }}<br />
+              {{ productos.19.precio }} bs</p>
+            <input name="ACarrito" type="button" value="Agregar al Carrito" />
+          </div>
+    </div>
+  </div>
 </body>
 </html>

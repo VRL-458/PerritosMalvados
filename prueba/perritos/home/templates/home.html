@@ -2,62 +2,117 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PERRITOS MALVADOS - Diseño de Interiores</title>
-    <link rel="stylesheet" href="static/home.css">
-<style>
-body {
-  background-image: url('https://kasasdecoracion.com/blog/wp-content/uploads/cuadro-sofa-2048x1382.jpg');
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-}
-</style>
+    <title>PM Design</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            background-color: #000;
+            color: #fff;
+        }
+
+        header {
+            background-color: #2a2a2a;
+            padding: 15px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #f9e07f;
+            padding: 10px 30px;
+        }
+
+        header h1 {
+            font-size: 24px;
+        }
+
+        nav {
+            display: flex;
+            gap: 15px;
+        }
+
+        nav a {
+            color: #f9e07f;
+            text-decoration: none;
+        }
+
+        .main-content {
+            background-color: #002366;
+            height: 450px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .main-content img {
+            width: 300px;
+            margin-bottom: 15px;
+        }
+
+        .contact-info {
+            background-color: #191919;
+            padding: 15px 0;
+            text-align: center;
+        }
+
+        .contact-info a {
+            color: #f47c7c;
+            text-decoration: none;
+            margin: 0 5px;
+        }
+
+        .social-icons {
+
+            margin-top: 10px;
+        }
+
+        .social-icons a {
+            margin: 0 10px;
+            color: #f47c7c;
+        }
+        .social-icons a img{
+            width: 40px
+
+        }
+
+
+
+    </style>
 </head>
 <body>
-
     <header>
-        <h1>Bienvenido a PERRITOS MALVADOS</h1>
+        <h1>PERRITOS MALVADOS</h1>
         <nav>
-            <ul>
-                <li><a href="usuario/usr/">Registro</a></li>
-                <li><a href="informacion/info/">Quiénes Somos</a></li>
-                <li><a href="servicios/ser/">Servicios</a></li>
-                <li><a href="productos/pro/">Productos</a></li>
-            </ul>
+            <a href="/usuario/usr/">Registrar</a>
+            <a href="/usuario/login">Login</a>
+            <a href="#">Inicio</a>
+            <a href="/informacion/info/">Nosotros</a>
+            <a href="#">Proyectos</a>
+            <a href="#">Contacto</a>
+            <a href="/productos/pro/">Productos</a>
+            <a href="/servicios/ser/">Servicios</a>
+            <a href="/carrito/carr/">Carrito</a>
         </nav>
     </header>
 
-    <div class="contenido">
-        <div class="logo">
-            <img src="https://i.postimg.cc/RhSJhzPS/Screenshot-2023-10-22-190720.png" alt="Logo">
-        </div>
-        <div class="bienvenida">
-
-            <h2>Mensaje de Bienvenida</h2>
-            <p>BIENVENIDO A PERRITOS MALVADOS <br>
-            Desde el concepto hasta la realidad
-            Ofrezco servicios <br>de diseño de interiores a medida en la zona de Ciudad de Cochabamba.<br>
-            Colaboro con los clientes para crear espacios con gusto y con un verdadero factor sorpresa.
-            <br>Comunícate hoy mismo para programar una cita inicial..</p>
-        </div>
+    <div class="main-content">
+        <img src="https://i.postimg.cc/RhSJhzPS/Screenshot-2023-10-22-190720.png" alt="PM Design Main Logo">
+        <h1>PM Design</h1>
     </div>
 
-    <section id="biografia">
+    <div class="contact-info">
+        <p>PM Design Company</p>
+        <p><a href="mailto:design@perritosmalvados.com">design@perritosmalvados.com</a></p>
+        <p>Av Juan Pablio II, Cochabamba, Bolivia</p>
+        <p>+591 12345678</p>
+        <div class="social-icons">
+            <a href="pagina facebook"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/2021_Facebook_icon.svg/512px-2021_Facebook_icon.svg.png" alt="Facebook"></a>
+            <a href="pagina insta"><img src="https://img.freepik.com/vector-gratis/instagram-nuevo-icono_1057-2227.jpg?w=826&t=st=1698589534~exp=1698590134~hmac=ec811dce46d0e7d50bffbe69411d0975c1763954a505bea35fd8cc200a881657" alt="Instagram"></a>
 
-    </section>
-
-    <div class="imagen-fondo">
-        <h2>Mi Biografía</h2>
-        <p>Uso el poder del diseño para transformar incluso los lugares más simples en espacios increíbles. Como Diseñador(a) de interiores experimentado(a), trabajo en la industria desde el año 2000 y tengo una clientela leal y entusiasta compuesta por clientes privados y comerciales. Contáctame para obtener más información.</p>
-
+        </div>
     </div>
-
-    <footer>
-        <p>&copy; 2023 PERRITOS MALVADOS - Diseño de Interiores</p>
-    </footer>
-
-    <script src="script.js"></script>
-
 </body>
 </html>

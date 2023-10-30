@@ -3,6 +3,9 @@ from . import views
 
 #URLConf
 urlpatterns = [
-    path('pro/', views.productos)
+    path('pro/', views.productos, name= 'productos'),
+
+
+
 
 ]

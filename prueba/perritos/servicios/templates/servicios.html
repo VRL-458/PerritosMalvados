@@ -1,101 +1,237 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<title>NUESTROS PRODUCTOS &quot;PM DESIGN&quot;</title>
-	<style type="text/css">body {
+    <title>NUESTROS servicios "PM DESIGN"</title>
+    <style type="text/css">
+        body {
             text-align: center;
-            font-family: 'Courier New', Courier, monospace;
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
         }
 
         h1 {
-            font-size: 36px;
-            color: #000080;
+            font-size: 42px;
+            color: #4a4a4a;
+            margin-top: 40px;
         }
 
         p {
-            font-family: 'Georgia', serif;
+            font-family: 'Arial', sans-serif;
             font-size: 22px;
-        }
-
-        p.italic {
-            font-size: 24px;
-        }
-
-        p.disclaimer {
-            font-size: 14px;
+            color: #6b6b6b;
         }
 
         .product {
             display: inline-block;
             margin: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            transition: transform 0.2s;
+        }
+
+        .product:hover {
+            transform: scale(1.05);
         }
 
         .product img {
             height: 260px;
             width: 400px;
-            border: 10px solid;
+            border-radius: 10px 10px 0 0;
         }
 
         .product-info {
-            font-family: 'Comic Sans MS', cursive;
-            font-size: 14px;
+            font-family: 'Arial', sans-serif;
+            font-size: 16px;
+            padding: 10px;
+            border-bottom: 1px solid #e5e5e5;
         }
-	</style>
+
+        button {
+            font-family: 'Arial', sans-serif;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
+
 <body>
-<h1><em><strong>NUESTROS SERVICIOS &quot;PM DESIGN&quot;</strong></em></h1>
+    <div class="container">
+        <h1>NUESTROS SERVICIOS "PM DESIGN"</h1>
+        <p>DISPONIBLES EN TODA BOLIVIA!!!!</p>
+        <p>(¡Lo que ves es lo que obtienes! Servicios que brillan tanto en la imagen como en la realidad.)</p>
 
-<p><em><strong>DISPONIBLES PARA TODA BOLIVIA!!!!</strong></em></p>
+        <div class="products">
+            <div class="products">
+      <!-- Producto 1 -->
+      <div class="product">
+        <img src="{{ servicios.0.imagen }}" alt="Imagen del producto" />
+        <p class="product-info">{{ servicios.0.nombre }}<br />
+          {{ servicios.0.precio }} </p>
+        <input name="ACarrito" type="button" value="COTIZAR" />
+      </div>
+      <!-- Producto 2 -->
+      <div class="product">
+        <img src="{{ servicios.1.imagen }}" alt="Imagen del producto" />
+        <p class="product-info">{{ servicios.1.nombre }}<br />
+          {{ servicios.1.precio }} </p>
+        <input name="ACarrito" type="button" value="COTIZAR" />
+      </div>
+        <!-- Producto 3 -->
+      <div class="product">
+        <img src="{{ servicios.2.imagen }}" alt="Imagen del producto" />
+        <p class="product-info">{{ servicios.2.nombre }}<br />
+          {{ servicios.2.precio }} </p>
+        <input name="ACarrito" type="button" value="COTIZAR" />
+      </div>
+                <!-- Producto 4 -->
+        <div class="product">
+          <img src="{{ servicios.3.imagen }}" alt="Imagen del producto 4" />
+          <p class="product-info">{{ servicios.3.nombre }}<br />
+            {{ servicios.3.precio }} </p>
+          <input name="ACarrito" type="button" value="COTIZAR" />
+        </div>
 
-<div class="product"><img src="https://www.ferreteriaboston.com/wp-content/uploads/2015/05/pinturas-interiores-costa-rica.jpg" />
-<p class="product-info"><strong>Servicio Pintado Interiores</strong></p>
+        <!-- Producto 5 -->
+        <div class="product">
+          <img src="{{ servicios.4.imagen }}" alt="Imagen del producto 5" />
+          <p class="product-info">{{ servicios.4.nombre }}<br />
+            {{ servicios.4.precio }} </p>
+          <input name="ACarrito" type="button" value="COTIZAR" />
+        </div>
 
-<p class="product-info"><br />
-&lt;10 m^2 -&gt; 100 bs <input name="ACarrito" type="button" value="Agregar al Carrito" /></p>
 
-<p class="product-info"><span style="font-family: &quot;Comic Sans MS&quot;, cursive; font-size: 14px;">&lt;50&nbsp;m^2 -&gt; 25</span><span style="font-family: &quot;Comic Sans MS&quot;, cursive; font-size: 14px;">0 bs&nbsp;</span><input name="ACarrito" type="button" value="Agregar al Carrito" /></p>
+                <!-- Producto 6 -->
+        <div class="product">
+          <img src="{{ servicios.5.imagen }}" alt="Imagen del producto 6" />
+          <p class="product-info">{{ servicios.5.nombre }}<br />
+            {{ servicios.5.precio }} </p>
+          <input name="ACarrito" type="button" value="COTIZAR" />
+        </div>
 
-<p class="product-info"><span style="font-family: &quot;Comic Sans MS&quot;, cursive; font-size: 14px;">&gt;50 m^2 -&gt; 500</span><span style="font-family: &quot;Comic Sans MS&quot;, cursive; font-size: 14px;">&nbsp;bs&nbsp;</span><input name="ACarrito" type="button" value="Agregar al Carrito" /></p>
-</div>
+        <!-- Producto 7 -->
+        <div class="product">
+          <img src="{{ servicios.6.imagen }}" alt="Imagen del producto 7" />
+          <p class="product-info">{{ servicios.6.nombre }}<br />
+            {{ servicios.6.precio }} </p>
+          <input name="ACarrito" type="button" value="COTIZAR" />
+        </div>
 
-<div class="product"><img src="https://www.decoramar.es/sites/default/files/field/image/2_0.jpg" />
-<p class="product-info"><strong>Servicio Pintado Exteriores</strong></p>
+        <!-- Producto 8 -->
+        <div class="product">
+          <img src="{{ servicios.7.imagen }}" alt="Imagen del producto 8" />
+          <p class="product-info">{{ servicios.7.nombre }}<br />
+            {{ servicios.7.precio }} </p>
+          <input name="ACarrito" type="button" value="COTIZAR" />
+        </div>
 
-<p class="product-info"><br />
-<span style="font-family: &quot;Comic Sans MS&quot;, cursive; font-size: 14px;">&lt;10 m^2 -&gt; 100 bs&nbsp;</span><input name="ACarrito" type="button" value="Agregar al Carrito" /></p>
+        <!-- Producto 9 -->
+        <div class="product">
+          <img src="{{ servicios.8.imagen }}" alt="Imagen del producto 9" />
+          <p class="product-info">{{ servicios.8.nombre }}<br />
+            {{ servicios.8.precio }} </p>
+          <input name="ACarrito" type="button" value="COTIZAR" />
+        </div>
 
-<p class="product-info"><span style="font-family: &quot;Comic Sans MS&quot;, cursive; font-size: 14px;">&lt;50&nbsp;m^2 -&gt; 25</span><span style="font-family: &quot;Comic Sans MS&quot;, cursive; font-size: 14px;">0 bs&nbsp;</span><input name="ACarrito" type="button" value="Agregar al Carrito" /></p>
+        <!-- Producto 10 -->
+        <div class="product">
+          <img src="{{ servicios.9.imagen }}" alt="Imagen del producto 10" />
+          <p class="product-info">{{ servicios.9.nombre }}<br />
+            {{ servicios.9.precio }} </p>
+          <input name="ACarrito" type="button" value="COTIZAR" />
+        </div>
 
-<p class="product-info"><span style="font-family: &quot;Comic Sans MS&quot;, cursive; font-size: 14px;">&gt;50 m^2 -&gt; 500</span><span style="font-family: &quot;Comic Sans MS&quot;, cursive; font-size: 14px;">&nbsp;bs&nbsp;</span><input name="ACarrito" type="button" value="Agregar al Carrito" /></p>
-</div>
+        <!-- Producto 11 -->
+        <div class="product">
+          <img src="{{ servicios.10.imagen }}" alt="Imagen del producto 11" />
+          <p class="product-info">{{ servicios.10.nombre }}<br />
+            {{ servicios.10.precio }} </p>
+          <input name="ACarrito" type="button" value="COTIZAR" />
+        </div>
 
-<div class="product"><img src="https://client-setting-co-institucional-images.s3.amazonaws.com/credito_para_remodelar_vivienda_f2f5661138.jpg" />
-<p class="product-info"><strong>Remodelado</strong></p>
+        <!-- Producto 12 -->
+        <div class="product">
+          <img src="{{ servicios.11.imagen }}" alt="Imagen del producto 12" />
+          <p class="product-info">{{ servicios.11.nombre }}<br />
+            {{ servicios.11.precio }} </p>
+          <input name="ACarrito" type="button" value="COTIZAR" />
+        </div>
 
-<p class="product-info"><br />
-1000-10000 bs <input name="ACarrito3" type="button" value="Consultar" /></p>
+        <!-- Producto 13 -->
+        <div class="product">
+          <img src="{{ servicios.12.imagen }}" alt="Imagen del producto 13" />
+          <p class="product-info">{{ servicios.12.nombre }}<br />
+            {{ servicios.12.precio }} </p>
+          <input name="ACarrito" type="button" value="COTIZAR" />
+        </div>
 
-<p class="product-info">&nbsp;</p>
+        <!-- Producto 14 -->
+        <div class="product">
+          <img src="{{ servicios.13.imagen }}" alt="Imagen del producto 14" />
+          <p class="product-info">{{ servicios.13.nombre }}<br />
+            {{ servicios.13.precio }} </p>
+          <input name="ACarrito" type="button" value="COTIZAR" />
+        </div>
 
-<p class="product-info">&nbsp;</p>
-</div>
+        <!-- Producto 15 -->
+        <div class="product">
+          <img src="{{ servicios.14.imagen }}" alt="Imagen del producto 15" />
+          <p class="product-info">{{ servicios.14.nombre }}<br />
+            {{ servicios.14.precio }} </p>
+          <input name="ACarrito" type="button" value="COTIZAR" />
+        </div>
 
-<div class="product"><img src="https://www.clara.es/medio/2021/02/23/decoracion-salones-ideas_a85ffa5a_1200x630.jpg" />
-<p class="product-info"><strong>Decoracion</strong></p>
+        <!-- Producto 16 -->
+        <div class="product">
+          <img src="{{ servicios.15.imagen }}" alt="Imagen del producto 16" />
+          <p class="product-info">{{ servicios.15.nombre }}<br />
+            {{ servicios.15.precio }} </p>
+          <input name="ACarrito" type="button" value="COTIZAR" />
+        </div>
+                <!-- Producto 17 -->
+        <div class="product">
+          <img src="{{ servicios.16.imagen }}" alt="Imagen del producto 17" />
+          <p class="product-info">{{ servicios.16.nombre }}<br />
+            {{ servicios.16.precio }} </p>
+          <input name="ACarrito" type="button" value="COTIZAR" />
+        </div>
 
-<p class="product-info"><br />
-500-3000 bs <input name="ACarrito4" type="button" value="Consultar" /></p>
+        <!-- Producto 18 -->
+        <div class="product">
+          <img src="{{ servicios.17.imagen }}" alt="Imagen del producto 18" />
+          <p class="product-info">{{ servicios.17.nombre }}<br />
+            {{ servicios.17.precio }} </p>
+          <input name="ACarrito" type="button" value="COTIZAR" />
+        </div>
 
-<p class="product-info">&nbsp;</p>
+        <!-- Producto 19 -->
+          <div class="product">
+            <img src="{{ servicios.18.imagen }}" alt="Imagen del producto" />
+            <p class="product-info">{{ servicios.18.nombre }}<br />
+              {{ servicios.18.precio }} </p>
+            <input name="ACarrito" type="button" value="COTIZAR" />
+          </div>
+          <!-- Producto 20 -->
+          <div class="product">
+            <img src="{{ servicios.19.imagen }}" alt="Imagen del producto" />
+            <p class="product-info">{{ servicios.19.nombre }}<br />
+              {{ servicios.19.precio }} </p>
+            <input name="ACarrito" type="button" value="COTIZAR" />
+          </div>
+    </div>
 
-<p class="product-info">&nbsp;</p>
-</div>
-
-<div><img src="https://www.arquitecturaydiseno.es/medio/2019/03/26/salon-con-mobiliario-a-medida-en-blanco-y-madera-00488088_7642c811_2000x1336.jpg" />
-<p class="product-info"><strong>Dise&ntilde;o de muebles a medida</strong></p>
-
-<p class="product-info"><br />
-2300 bs <input name="ACarrito5" type="button" value="Consultar" /></p>
-</div>
+        </div>
+    </div>
 </body>
+
 </html>

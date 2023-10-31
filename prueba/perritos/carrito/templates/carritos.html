@@ -111,18 +111,22 @@
 <body>
 
     <header>
-
+        
     </header>
 
 <div class="cart-container">
     <!-- Repeat product block for each item -->
     <div class="product">
-        <img src="path/to/image.jpg" alt="Product Image">
+        <!--<img src="path/to/image.jpg" alt="Product Image">
         <div class="product-details">
             <div class="product-name">NOMBRE ITEM</div>
             <div class="product-description">Descripción del producto aquí.</div>
         </div>
-        <div class="product-price">BOB 0.00</div>
+        <div class="product-price">BOB 0.00</div> -->
+        {% for pc in productos_carrito%}
+        <h4{pc.productos_id}></h4>
+        {%endfor%}
+        
     </div>
     <!-- End of product block -->
 

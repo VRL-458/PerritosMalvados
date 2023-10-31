@@ -88,7 +88,7 @@ DATABASES = {
         'PORT': 5432,
         'NAME': 'PM', #nombre de la base de datos
         'USER': 'postgres',
-        'PASSWORD': '5Septiembre',
+        'PASSWORD': '12345',
 
     }
 }

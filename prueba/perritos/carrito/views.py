@@ -6,8 +6,8 @@ from .models import Carrito, CarritoProducto
 def carrito(request):
     
     #Obtener carrito actual del usuario
-    productos_carrito = productos_carrito.objects.all(carritoId = 1)
-    return render(request, 'carritos.html', {"productos_carrito", productos_carrito})
+    carrito = CarritoProducto.objects.all()
+    return render(request, 'carritos.html', {"productos_carrito", carrito})
 
 
 

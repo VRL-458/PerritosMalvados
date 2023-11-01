@@ -146,9 +146,11 @@
       <!--  -->
       <div class="product">
         <img src="{{ pr.imagen }}" alt="Imagen del producto" />
-        <p class="product-info">{{ pr.nombre }}<br />
-          {{ pr.precio }} bs</p>
-        <input name="ACarrito" type="button" value="Agregar al Carrito"/>
+        <p class="product-info">{{ pr.nombre }}<br />{{ pr.precio }} bs</p>
+        <form method="post" action="{% url 'anadirCarrito'  idProducto=pr.id  %}">
+          {% csrf_token %}
+          <input name="ACarrito" type="submit" value="Agregar al Carrito"/>
+        </form>
       </div>
       {% endfor %}
       

@@ -12,8 +12,8 @@ class Carrito(models.Model):
         db_table = 'carrito'
         
 class CarritoProducto(models.Model):
-    carritoId = models.IntegerField()
-    productoId = models.IntegerField()
+    carrito_id = models.IntegerField()
+    producto_id = models.IntegerField()
 
     class Meta:
         managed = False

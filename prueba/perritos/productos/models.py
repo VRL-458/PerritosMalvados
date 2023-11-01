@@ -30,23 +30,28 @@ class Productos(models.Model):
         db_table = 'productos'
         
 class Carrito(models.Model):
-    id = models.IntegerField(primary_key=True)
     fechacreacion = models.DateField()
     estado = models.CharField(max_length=50)
-    usuario_email = models.ForeignKey(Usuario, models.DO_NOTHING)
+    usuario_email = models.ForeignKey('Usuario', models.DO_NOTHING, db_column='usuario_email')
+
+    class Meta:
+        managed = False
+        db_table = 'carrito'
+
     
 
     class Meta:
         managed = False
         db_table = 'carrito'
         
-class CarritoProducto(models.Model):
-    carritoId = models.ForeignKey(Carrito, models.DO_NOTHING )
-    productoId = models.ForeignKey(Productos, models.DO_NOTHING )
+class CarritoProductos(models.Model):
+    carrito = models.OneToOneField(Carrito, models.DO_NOTHING, primary_key=True)  # The composite primary key (carrito_id, productos_id) found, that is not supported. The first column is selected.
+    productos = models.ForeignKey('Productos', models.DO_NOTHING)
 
     class Meta:
         managed = False
         db_table = 'carrito_productos'
+        unique_together = (('carrito', 'productos'),)
 
 
 

@@ -102,6 +102,7 @@
         .button.pay {
             background-color: #2ecc71;
             color: white;
+            text-decoration: none
         }
 
         .footer {
@@ -136,8 +137,10 @@
         </div>
         <div class="product-price">BOB {{prod.precio}}</div>
        
-        <a class="eliminate-button">Quitar</a>
-        
+        <form method="post" action="{% url 'eliminar_producto' idProducto=prod.id %}">
+            {% csrf_token %}
+            <input name="DProductoCarrito" type="submit" value="Quitar" class = "eliminate-button">
+        </form>
     </div>
     {% endfor %}
     <!-- End of product block -->
@@ -147,9 +150,14 @@
         <span>BOB {{total}}</span>
     </div>
 
-    <div class="buttons">
-        <span class="button cancel">Eliminar Carrito</span>
-        <span class="button pay">Pagar</span>
+    <div class="button">
+        <form method="post" action="{% url 'eliminar_carrito' %}">
+            {% csrf_token %}
+            <input name="DCarrito" type="submit" value="Eliminar Carrito" class = "button cancel">
+        </form>
+        
+        <a class = "button pay" href = "http://127.0.0.1:8000/usuario/venta/">Pagar</a>
+        
     </div>
     <div class="footer">
         Perritos Malvados <br>

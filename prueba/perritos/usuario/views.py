@@ -118,7 +118,7 @@ def factura(request, factura_id):
         'compra' : compra,
         'detalles_productos': detalles_productos,
         'detalles_cotizaciones': detalles_cotizaciones,
-        'Usuario': Usuario,
+        'usuario': Usuario,
         'total': total,
     })
 

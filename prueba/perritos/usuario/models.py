@@ -27,6 +27,7 @@ class Usuario(AbstractBaseUser, PermissionsMixin):
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
     last_login = models.DateTimeField(null=True, blank=True)
+    roles = models.CharField(max_length=50, default='usuario')
 
     groups = models.ManyToManyField(Group, blank=True, related_name="custom_user_set")
     user_permissions = models.ManyToManyField(Permission, blank=True, related_name="custom_user_set")

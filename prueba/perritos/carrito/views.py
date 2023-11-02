@@ -3,7 +3,7 @@ from django.db.models import Sum
 
 
 # Create your views here.
-from .models import Categorias, Productos, Carrito, CarritoProductos, Usuario, Cotizacion
+from .models import  Productos, Carrito, CarritoProductos, Usuario, Cotizacion, Servicios
 
 
 cart = None
@@ -19,17 +19,25 @@ def carrito(request):
             cart = Carrito.objects.get(usuario_email=user, estado='ACTIVO')
             
              #PRODUCTOS
-            productos = Productos.objects.all()
+           
             productos_carrito = cart.productos.all()
             
             #COTIZACIONES
-            cotizaciones = Cotizacion.objects.filter(carrito = cart)
+            cotizacion_carrito = Cotizacion.objects.select_related('servicios').values('servicios__nombre', 'servicios__descripcion', 'servicios__imagen','precio', 'carrito', 'servicios__id').filter(carrito = cart)
+   
+        
+            total = 0
+            precio_productos = productos_carrito.aggregate(total=Sum('precio'))['total']
+            precio_servicios = cotizacion_carrito.aggregate(total=Sum('precio'))['total']
             
-           
+            if(precio_productos):
+                total += precio_productos
+            if(precio_servicios):
+                total += precio_servicios
             
-            total = productos_carrito.aggregate(total=Sum('precio'))['total']
+
             
-            return render(request, 'carritos.html', {"productos_carrito": productos_carrito, "cotizaciones": cotizaciones,"total":  total})
+            return render(request, 'carritos.html', {"productos_carrito": productos_carrito,"cotizacion_carrito":cotizacion_carrito ,"total":  total})
         else:
             return render(request, 'carritos.html')
     else:
@@ -52,4 +60,16 @@ def eliminar_carrito(request):
         return redirect('http://127.0.0.1:8000/')
     else:
         return render(request, 'carritos.html')
+    
+def eliminar_servicio(request, idServicio):
+    if request.method == 'POST':
+        global cart
+        m_servicio = Servicios.objects.get(id = idServicio)
+        cotizacion = Cotizacion.objects.get(servicios = m_servicio, carrito = cart)
+        cotizacion.carrito = None
+        cotizacion.save()
+        return redirect('http://127.0.0.1:8000/carrito/carr/')
+    else:
+        return render(request, 'carritos.html')
+
     

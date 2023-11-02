@@ -126,7 +126,7 @@
 
 <div class="cart-container">
     <!-- Repeat product block for each item -->
-    
+    <h2>Productos</h2>
     {% for prod in productos_carrito %}
     
     <div class="product">
@@ -143,7 +143,28 @@
         </form>
     </div>
     {% endfor %}
-    <!-- End of product block -->
+
+    <h2>Servicios</h2>
+    {% for cot in cotizacion_carrito %}
+    
+    <div class="product">
+        <img src={{cot.servicios__imagen}} alt="Product Image">
+        <div class="product-details">
+            <div class="product-name">{{cot.servicios__nombre}}</div>
+            <div class="product-description">{{cot.servicios__descripcion}}</div>
+        </div>
+        <div class="product-price">BOB {{cot.precio}}</div>
+
+        <form method="post" action="{% url 'eliminar_servicio' idServicio=cot.servicios__id %}">
+            {% csrf_token %}
+            <input name="DServicioCarrito" type="submit" value="Quitar" class = "eliminate-button">
+        </form>
+        
+    </div>
+    {% endfor %}
+
+    
+    
 
     <div class="total">
         <span>TOTAL:</span>

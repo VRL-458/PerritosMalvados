@@ -16,6 +16,7 @@ class Carrito(models.Model):
     estado = models.CharField(max_length=50)
     usuario_email = models.ForeignKey('Usuario', models.DO_NOTHING, db_column='usuario_email')
     productos = models.ManyToManyField('Productos', through='CarritoProductos')
+    servicios = models.ManyToManyField("Servicios", through='Cotizacion')
     class Meta:
         managed = False
         db_table = 'carrito'
@@ -133,7 +134,7 @@ class Servicios(models.Model):
     nombre = models.CharField(max_length=50)
     descripcion = models.CharField(max_length=50)
     imagen = models.CharField(max_length=200)
-
+   
     class Meta:
         managed = False
         db_table = 'servicios'

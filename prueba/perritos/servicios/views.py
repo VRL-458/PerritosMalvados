@@ -2,7 +2,12 @@ from django.contrib.auth import login, authenticate
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Encargado,  Servicios, Cotizacion
+import sys
+sys.path.append("..")
+from usuario.models import Usuario
+from carrito.models import Carrito
 from .forms import LoginEncargado
+from django.utils import timezone
 
 
 def servicios(request):
@@ -56,11 +61,22 @@ def cotizacion(request):
     servicio = Servicios.objects.get(pk=id_servicio)
 
     if request.method == "POST":
-        user = request.user
-        if request.POST.get('descripcion'):
-            cotizacion = Cotizacion()
-            cotizacion.descripcion = request.POST.get('descripcion');
-            cotizacion.estado = 'En espera'
-            cotizacion.servicios_id = id_servicio
+        if request.user.is_authenticated:
+            try:
+                user = request.user
+                user = Usuario.objects.get(email = user)
+                
+            except Usuario.DoesNotExist:
+                return redirect('http://127.0.0.1:8000/usuario/login/')
+
+            if request.POST.get('descripcion'):
+                cotizacion = Cotizacion()
+                cotizacion.descripcion = request.POST.get('descripcion');
+                cotizacion.servicios_id = id_servicio
+                cotizacion.usuario_email = user.email
+                cotizacion.save()
+                print("Cotización enviada")
+
+                
 
     return render(request, 'cotizacion.html', {'nombre_servicio': servicio.nombre, 'imagen_servicio': servicio.imagen})

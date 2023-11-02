@@ -134,7 +134,8 @@ def procesar_compra(request):
 
             #recibir email registrado
             email = request.user.email
-            carrito = Carrito.objects.get(usuario_email=email, estado='Activo')
+            print(email)
+            carrito = Carrito.objects.get(usuario_email=email, estado='ACTIVO')
             carrito.estado = "Comprado"
             carrito.save()
 
@@ -142,8 +143,9 @@ def procesar_compra(request):
 
             productos_del_carrito = carrito.productos.all()
             for producto in productos_del_carrito:
-                producto.stock -= 1
-                if producto.stock < 0:
+                if producto.stock >= 1:
+                    producto.stock -= 1
+                else:
                     stockSuficiente = False
                 producto.save()
             if stockSuficiente:

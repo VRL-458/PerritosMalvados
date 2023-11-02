@@ -1,76 +1,72 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>NUESTROS PRODUCTOS "PM DESIGN"</title>
+  <title>PRODUCTOS</title>
   <style type="text/css">
     body {
-      text-align: center;
       font-family: 'Arial', sans-serif;
       margin: 0;
       padding: 0;
       background-color: #f4f4f4;
+      text-align: center;
     }
-
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    
     header {
-            background-color: #2a2a2a;
-            padding: 15px 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            color: #f9e07f;
-            padding: 10px 30px;
-        }
-
-        header h1 {
-            font-size: 24px;
-        }
-
-        nav {
-            display: flex;
-            gap: 15px;
-        }
-
-        nav a {
-            color: #f9e07f;
-            text-decoration: none;
-        }
-
-
-    h1 {
+      background-color: #2a2a2a;
+      padding: 15px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #f9e07f;
+    }
+    
+    header h1 {
+      font-size: 24px;
+    }
+    
+    nav {
+      display: flex;
+      gap: 15px;
+    }
+    
+    nav a {
+      color: #f9e07f;
+      text-decoration: none;
+    }
+    
+    .main-title {
       font-size: 36px;
       color: #333;
       margin-top: 20px;
     }
-
-    p {
-      font-family: 'Georgia', serif;
+    
+    .main-subtitle {
       font-size: 22px;
       margin-top: 5px;
     }
-
+    
     p.italic {
       font-style: italic;
     }
-
-    p.disclaimer {
+    
+    .disclaimer {
       font-size: 14px;
       color: #888;
       margin-top: 5px;
     }
-
-    .container {
-      max-width: 1200px;
-      margin: 20px auto;
-      overflow: hidden;
-      padding: 0 20px;
-    }
-
+    
     .products {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-around;
     }
-
+    
     .product {
       background: #fff;
       border: 1px solid #ddd;
@@ -80,12 +76,12 @@
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       transition: transform 0.2s, box-shadow 0.2s;
     }
-
+    
     .product:hover {
       transform: scale(1.05);
       box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
     }
-
+    
     .product img {
       max-width: 100%;
       border: 1px solid #ddd;
@@ -93,14 +89,13 @@
       padding: 5px;
       margin-bottom: 10px;
     }
-
+    
     .product-info {
-      font-family: 'Arial', sans-serif;
       font-size: 14px;
       margin-top: 10px;
     }
-
-    input[type="button"] {
+    
+    .add-to-cart-button {
       border: none;
       font-size: 14px;
       padding: 10px 20px;
@@ -109,8 +104,8 @@
       border-radius: 5px;
       cursor: pointer;
     }
-
-    input[type="button"]:hover {
+    
+    .add-to-cart-button:hover {
       background-color: #218838;
     }
 
@@ -146,10 +141,11 @@
       <!--  -->
       <div class="product">
         <img src="{{ pr.imagen }}" alt="Imagen del producto" />
-        <p class="product-info">{{ pr.nombre }}<br />{{ pr.precio }} bs</p>
+        <h3>{{ pr.nombre }}</h3>
+        <p class="product-info">{{ pr.descripcion }}<br />{{ pr.precio }} bs</p>
         <form method="post" action="{% url 'anadirCarrito'  idProducto=pr.id  %}">
           {% csrf_token %}
-          <input name="ACarrito" type="submit" value="Agregar al Carrito"/>
+          <input name="ACarrito" type="submit" value="Agregar al Carrito" class = "add-to-cart-button"/>
         </form>
       </div>
       {% endfor %}

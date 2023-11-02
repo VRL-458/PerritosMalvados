@@ -11,7 +11,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin: 0;
+            margin: 0px;
             padding: 20px;
         }
 
@@ -64,24 +64,107 @@
         .btn:hover {
             background-color: #2980b9;
         }
+
+
+        button, input[type="submit"] {
+            font-family: 'Roboto', sans-serif;
+            padding: 15px 240px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            align-items: center;
+        }
+
+        button:hover, input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        
+        textarea {
+            font-family: 'Roboto', sans-serif;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+            resize: vertical; /* Allow vertical resizing */
+        }
+
+        header {
+            background-color: #2a2a2a;
+            padding: 15px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #f9e07f;
+          }
+
+          header h1 {
+            font-size: 24px;
+          }
+          
+          nav {
+            display: flex;
+            gap: 15px;
+          }
+          
+          nav a {
+            color: #f9e07f;
+            text-decoration: none;
+          }
+          
+          .main-title {
+            font-size: 36px;
+            color: #333;
+            margin-top: 20px;
+          }
+          
+          .main-subtitle {
+            font-size: 22px;
+            margin-top: 5px;
+          }
+          
+          p.italic {
+            font-style: italic;
+          }
+          
+          .disclaimer {
+            font-size: 14px;
+            color: #888;
+            margin-top: 5px;
+          }
     </style>
 </head>
 <body>
 
 <header>
-    PERRITOS MALVADOS
+    <header>
+        <h1>PERRITOS MALVADOS</h1>
+        <nav>
+            <a href="/usuario/usr/">Registrar</a>
+            <a href="/usuario/login">Login</a>
+            <a href="/">Inicio</a>
+            <a href="/informacion/info/">Nosotros</a>
+            <a href="/productos/pro/">Productos</a>
+            <a href="/servicios/ser/">Servicios</a>
+            <a href="/carrito/carr/">Carrito</a>
+        </nav>
+    </header>
 </header>
 
 <div class="service-container">
     <h2>{{ nombre_servicio }}</h2>
 
     {% load static %}
-    <img src="{% static ''|add:imagen_servicio %}" alt="imagen del producto">
+    <img src="{{imagen_servicio}}" alt="imagen del producto">
 
     <form action="" method="POST">
         {% csrf_token %}
         <textarea placeholder="Descripción" name="descripcion"></textarea>
-        <input type="submit" value="post">
+        <br>
+        <input type="submit" value="Enviar">
     </form>
 </div>
 

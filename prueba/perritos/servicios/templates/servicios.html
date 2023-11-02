@@ -94,8 +94,8 @@
         background-color: #0056b3;
       }
 
-      form{
-        float: left
+      form {
+        float: left;
       }
     </style>
   </head>
@@ -110,7 +110,7 @@
         <a href="/informacion/info/">Nosotros</a>
         <a href="/productos/pro/">Productos</a>
         <a href="/servicios/ser/">Servicios</a>
-        <a href="/carrito/carr/">Carrito</a>      
+        <a href="/carrito/carr/">Carrito</a>
       </nav>
     </header>
 
@@ -120,24 +120,16 @@
       <p>(¡Lo que ves es lo que obtienes! Servicios que brillan tanto en la imagen como en la realidad)</p>
     </div>
 
-        {% for servicio in servicios %}
-
-          <form action="http://127.0.0.1:8000/servicios/cotizacion/" method="GET">
-            <div class="product">
-              {% load static %}
-              <img src="{% static ''|add:servicio.imagen %}" alt="imagen del producto">
-              <p class="product-name">
-                {{ servicio.nombre }}
-              </p>
-              <p class="product-info">
-                {{ servicio.descripcion }}
-              </p>
-              <input type="hidden" name="id_servicio" value="{{ servicio.id }}">
-              <input type="submit" value="Cotizacion"/>
-            </div>
-          </form>
-
-        {% endfor %}
+    {% for servicio in servicios %}
+    <form action="http://127.0.0.1:8000/servicios/cotizacion/" method="GET">
+      <div class="product">
+        <img src={{ servicio.imagen }} alt="imagen del producto">
+        <p class="product-name">{{ servicio.nombre }}</p>
+        <p class="product-info">{{ servicio.descripcion }}</p>
+        <input type="hidden" name="id_servicio" value="{{ servicio.id }}">
+        <button class="submit-button" type="submit">Cotización</button>
+      </div>
+    </form>
+    {% endfor %}
   </body>
-
 </html>

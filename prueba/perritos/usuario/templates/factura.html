@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factura - Perritos Malvados</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+            padding: 20px;
+        }
+
+        .invoice {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border: 1px solid #e1e1e1;
+        }
+
+        .invoice-header {
+            text-align: center;
+            background: #3498db;
+            color: white;
+            padding: 10px;
+        }
+
+        .invoice-header h1 {
+            font-size: 24px;
+        }
+
+        .invoice-body {
+            padding: 20px;
+        }
+
+        .invoice-details {
+            margin-bottom: 20px;
+        }
+
+        .invoice-details p {
+            margin: 0;
+        }
+
+        .invoice-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .invoice-table th,
+        .invoice-table td {
+            border: 1px solid #e1e1e1;
+            padding: 10px;
+            text-align: left;
+        }
+
+        .invoice-total {
+            text-align: right;
+        }
+
+        /* Estilo para el botón de regreso */
+        .btn-regresar {
+            display: block;
+            margin-top: 20px;
+            text-align: center;
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="invoice">
+        <div class="invoice-header">
+            <h1>Factura - Perritos Malvados</h1>
+        </div>
+        <div class="invoice-body">
+            <div class="invoice-details">
+                <p><strong>Fecha:</strong> {{ compra.fecha }}</p>
+                <p><strong>Cliente:</strong> {{ usuario.nombre }} {{ usuario.apellido }}</p>
+                <p><strong>Razon Social:</strong> {{ factura.razonsocial }}</p>
+                <p><strong>NIT:</strong> {{ factura.nit }}</p>
+            </div>
+
+            <table class="invoice-table">
+                <thead>
+                    <tr>
+                        <th>Descripción</th>
+                        <th>Cantidad</th>
+                        <th>Precio Unitario</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for producto in detalles_productos %}
+                    <tr>
+                        <td>{{ producto.nombre }}</td>
+                        <td>1</td>
+                        <td>{{ producto.precio }}</td>
+                        <td>{{ producto.precio }}</td>
+                    </tr>
+                    {% endfor %}
+                    <!-- Puedes repetir esta fila para cada producto -->
+                    {% for cotizacion in detalles_cotizaciones %}
+                    <tr>
+                        <td>{{ cotizacion.descripcion }}</td>
+                        <td>1</td>
+                        <td>{{ cotizacion.precio }}</td>
+                        <td>{{ cotizacion.precio }}</td>
+                    </tr>
+                    {% endfor %}
+                    <!-- Puedes repetir esta fila para cada cotización -->
+                </tbody>
+            </table>
+
+            <div class="invoice-total">
+                <p><strong>Total:</strong> {{ total }}</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Botón de regreso al inicio -->
+    <a href="http://127.0.0.1:8000/" class="btn-regresar">Regresar al Inicio</a>
+
+</body>
+
+</html>

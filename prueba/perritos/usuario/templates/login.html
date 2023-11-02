@@ -7,7 +7,6 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('imagen_fondo.jpg');
             background-size: cover;
             background-position: center;
             color: #fff;
@@ -47,13 +46,7 @@
             <button class="btn btn-primary btn-lg mt-3" type="submit">Iniciar Sesión</button>
         </form>
 
-        <div class="text-center mt-4">
-            {% if user.is_authenticated %}
-                <p>Has iniciado sesión como {{ user.username }}</p>
-            {% else %}
-                <p>No has iniciado sesión</p>
-            {%endif%}
-        </div>
+
     </div>
 
     <!-- Scripts Bootstrap -->

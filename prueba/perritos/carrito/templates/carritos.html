@@ -68,6 +68,15 @@
             margin-left: 20px;
         }
 
+        .eliminate-button {
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
         .total {
             display: flex;
             justify-content: space-between;
@@ -111,26 +120,31 @@
 <body>
 
     <header>
-        
+
     </header>
 
 <div class="cart-container">
     <!-- Repeat product block for each item -->
+    
+    {% for prod in productos_carrito %}
+    
     <div class="product">
-        <!--<img src="path/to/image.jpg" alt="Product Image">
+        <img src={{prod.imagen}} alt="Product Image">
         <div class="product-details">
-            <div class="product-name">NOMBRE ITEM</div>
-            <div class="product-description">Descripción del producto aquí.</div>
+            <div class="product-name">{{prod.nombre}}</div>
+            <div class="product-description">{{prod.descripcion}}</div>
         </div>
-        <div class="product-price">BOB 0.00</div> -->
-        
+        <div class="product-price">BOB {{prod.precio}}</div>
+       
+        <a class="eliminate-button">Quitar</a>
         
     </div>
+    {% endfor %}
     <!-- End of product block -->
 
     <div class="total">
         <span>TOTAL:</span>
-        <span>BOB 0.00</span>
+        <span>BOB {{total}}</span>
     </div>
 
     <div class="buttons">
@@ -140,7 +154,7 @@
     <div class="footer">
         Perritos Malvados <br>
         design@perritosmalvados.com <br>
-        Av Juan Pablo II, Calicapirhua <br>
+        Av Juan Pablo II, Colcapirhua <br>
         +591 12345678 <br>
         <a href="#">Facebook</a> | <a href="#">Instagram</a> | <a href="#">Twitter</a>
     </div>

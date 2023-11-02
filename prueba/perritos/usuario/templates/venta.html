@@ -59,22 +59,25 @@
 
     <div class="form-container">
         <div class="form-title">Datos de envío</div>
-        <input type="text" placeholder="Departamento">
-        <input type="text" placeholder="Ciudad">
-        <input type="text" placeholder="Dirección">
-        <input type="text" placeholder="Contacto">
-        <textarea rows="4" style="width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 5px;" placeholder="Observaciones"></textarea>
+        <form method="post" action="{% url 'procesar_compra' %}">
+            {% csrf_token %}
+            <input type="text" name="departamento" placeholder="Departamento">
+            <input type="text" name="ciuddad" placeholder="Ciudad">
+            <input type="text" name="direccion" placeholder="Dirección">
+            <input type="text" name="contacto" placeholder="Contacto">
+            <textarea name="observaciones" rows="4" style="width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 5px;" placeholder="Observaciones"></textarea>
 
-        <div class="form-title">Datos de facturación</div>
-        <input type="text" placeholder="NIT">
-        <input type="text" placeholder="Razón Social">
+            <div class="form-title">Datos de facturación</div>
+            <input type="text" name="nit" placeholder="NIT">
+            <input type="text" name="razonsocial" placeholder="Razón Social">
 
-        <div class="form-title">Datos de pago con tarjeta</div>
-        <input type="text" placeholder="Nombre del propietario de la tarjeta">
-        <input type="text" placeholder="Número de tarjeta">
-        <input type="date" placeholder="Fecha de expiración">
-        <input type="number" placeholder="CVV" max="999" style="width: 80px;">
-        <button>Realizar compra</button>
+            <div class="form-title">Datos de pago con tarjeta</div>
+            <input type="text" name="nombrepropietariotarjeta" placeholder="Nombre del propietario de la tarjeta">
+            <input type="text" name="numerotarjeta" placeholder="Número de tarjeta">
+            <input type="date" name="fechaexpiraciontarjeta" placeholder="Fecha de expiración">
+            <input type="number" name="numeroscvv" placeholder="CVV" max="999" style="width: 80px;">
+            <button type="submit">Realizar compra</button>
+        </form>
     </div>
 
 </body>

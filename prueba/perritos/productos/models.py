@@ -8,6 +8,16 @@ class Usuario(models.Model):
     apellido = models.CharField(max_length=50)
     password = models.CharField(max_length=50)
     telefono = models.IntegerField()
+    last_login = models.DateTimeField(blank=True, null=True)
+    is_superuser = models.BooleanField()
+    date_joined = models.DateTimeField()
+    is_active = models.BooleanField()
+    is_staff = models.BooleanField()
+
+    class Meta:
+        managed = False
+        db_table = 'usuario'
+
 
 class Categorias(models.Model):
     nombre = models.CharField(max_length=50)
@@ -38,11 +48,6 @@ class Carrito(models.Model):
         managed = False
         db_table = 'carrito'
 
-    
-
-    class Meta:
-        managed = False
-        db_table = 'carrito'
         
 class CarritoProductos(models.Model):
     carrito = models.OneToOneField(Carrito, models.DO_NOTHING, primary_key=True)  # The composite primary key (carrito_id, productos_id) found, that is not supported. The first column is selected.

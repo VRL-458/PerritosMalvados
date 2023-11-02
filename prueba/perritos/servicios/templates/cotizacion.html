@@ -73,11 +73,16 @@
 </header>
 
 <div class="service-container">
-    <h2>Título servicio</h2>
-    <img src="path/to/image.jpg" alt="Imagen del servicio">
+    <h2>{{ nombre_servicio }}</h2>
 
-    <textarea placeholder="Descripción"></textarea>
-    <a href="#" class="btn">Enviar</a>
+    {% load static %}
+    <img src="{% static ''|add:imagen_servicio %}" alt="imagen del producto">
+
+    <form action="" method="POST">
+        {% csrf_token %}
+        <textarea placeholder="Descripción" name="descripcion"></textarea>
+        <input type="submit" value="post">
+    </form>
 </div>
 
 </body>

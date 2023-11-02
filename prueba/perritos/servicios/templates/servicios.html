@@ -1,281 +1,143 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <title>NUESTROS servicios "PM DESIGN"</title>
     <style type="text/css">
-        body {
-            text-align: center;
-            font-family: 'Arial', sans-serif;
-            background-color: #f5f5f5;
-        }
+      header {
+        background-color: #2a2a2a;
+        padding: 15px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: #f9e07f;
+        padding: 10px 30px;
+      }
 
-         header {
-            background-color: #2a2a2a;
-            padding: 15px 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            color: #f9e07f;
-            padding: 10px 30px;
-        }
+      body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f5f5f5;
+      }
 
-        header h1 {
-            font-size: 24px;
-        }
+      header h1 {
+        font-size: 24px;
+      }
 
-        nav {
-            display: flex;
-            gap: 15px;
-        }
+      nav {
+        display: flex;
+        gap: 15px;
+      }
 
-        nav a {
-            color: #f9e07f;
-            text-decoration: none;
-        }
+      nav a {
+        color: #f9e07f;
+        text-decoration: none;
+      }
 
+      h1 {
+        font-size: 42px;
+        color: #4a4a4a;
+        margin-top: 40px;
+      }
 
-        h1 {
-            font-size: 42px;
-            color: #4a4a4a;
-            margin-top: 40px;
-        }
+      p {
+        font-family: 'Arial', sans-serif;
+        font-size: 22px;
+        color: #6b6b6b;
+      }
 
-        p {
-            font-family: 'Arial', sans-serif;
-            font-size: 22px;
-            color: #6b6b6b;
-        }
+      .product {
+        display: inline-block;
+        margin: 20px;
+        background-color: #fff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        transition: transform 0.2s;
+      }
 
-        .product {
-            display: inline-block;
-            margin: 20px;
-            background-color: #fff;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-            transition: transform 0.2s;
-        }
+      .product:hover {
+        transform: scale(1.05);
+      }
 
-        .product:hover {
-            transform: scale(1.05);
-        }
+      .product img {
+        height: 400px;
+        width: 400px;
+        border-radius: 10px 10px 0 0;
+      }
 
-        .product img {
-            height: 260px;
-            width: 400px;
-            border-radius: 10px 10px 0 0;
-        }
+      .product-info {
+        font-family: 'Arial', sans-serif;
+        font-size: 16px;
+        padding-left: 10px;
+        border-bottom: 1px solid #e5e5e5;
+      }
 
-        .product-info {
-            font-family: 'Arial', sans-serif;
-            font-size: 16px;
-            padding: 10px;
-            border-bottom: 1px solid #e5e5e5;
-        }
+      .product-name {
+        font-family: 'Arial', sans-serif;
+        font-weight: bold;
+        font-size: 20px;
+        padding-left: 10px;
+        border-bottom: 5px;
+        color: #2a2a2a;
+      }
 
-        button {
-            font-family: 'Arial', sans-serif;
-            padding: 10px 20px;
-            background-color: #007BFF;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.2s;
-        }
+      button {
+        font-family: 'Arial', sans-serif;
+        padding: 10px 20px;
+        background-color: #007BFF;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.2s;
+      }
 
-        button:hover {
-            background-color: #0056b3;
-        }
+      button:hover {
+        background-color: #0056b3;
+      }
+
+      form{
+        float: left
+      }
     </style>
-</head>
+  </head>
 
-<body>
-
-  <header>
-        <h1>PERRITOS MALVADOS</h1>
-        <nav>
-            <a href="/usuario/usr/">Registrar</a>
-            <a href="/usuario/login">Login</a>
-            <a href="/">Inicio</a>
-            <a href="/informacion/info/">Nosotros</a>
-            <a href="/productos/pro/">Productos</a>
-            <a href="/servicios/ser/">Servicios</a>
-            <a href="/carrito/carr/">Carrito</a>
-          
-          
-        </nav>
+  <body>
+    <header>
+      <h1>PERRITOS MALVADOS</h1>
+      <nav>
+        <a href="/usuario/usr/">Registrar</a>
+        <a href="/usuario/login">Login</a>
+        <a href="/">Inicio</a>
+        <a href="/informacion/info/">Nosotros</a>
+        <a href="/productos/pro/">Productos</a>
+        <a href="/servicios/ser/">Servicios</a>
+        <a href="/carrito/carr/">Carrito</a>      
+      </nav>
     </header>
 
     <div class="container">
-        <h1>NUESTROS SERVICIOS "PM DESIGN"</h1>
-        <p>DISPONIBLES EN TODA BOLIVIA!!!!</p>
-        <p>(¡Lo que ves es lo que obtienes! Servicios que brillan tanto en la imagen como en la realidad.)</p>
-
-        <div class="products">
-            <div class="products">
-      <!-- Producto 1 -->
-        <form action="http://127.0.0.1:8000/servicios/cotizacion/" method="GET">
-      <div class="product">
-          <img src="{{ servicios.0.imagen }}" alt="Imagen del producto" />
-          <p class="product-info">{{ servicios.0.nombre }}<br />
-            {{ servicios.0.precio }} </p>
-          <input type="submit" value="COTIZAR" />
-      </div>
-  </form>
-
-      <!-- Producto 2 -->
-      <div class="product">
-        <img src="{{ servicios.1.imagen }}" alt="Imagen del producto" />
-        <p class="product-info">{{ servicios.1.nombre }}<br />
-          {{ servicios.1.precio }} </p>
-        <input name="ACarrito" type="button" value="COTIZAR" />
-      </div>
-        <!-- Producto 3 -->
-      <div class="product">
-        <img src="{{ servicios.2.imagen }}" alt="Imagen del producto" />
-        <p class="product-info">{{ servicios.2.nombre }}<br />
-          {{ servicios.2.precio }} </p>
-        <input name="ACarrito" type="button" value="COTIZAR" />
-      </div>
-                <!-- Producto 4 -->
-        <div class="product">
-          <img src="{{ servicios.3.imagen }}" alt="Imagen del producto 4" />
-          <p class="product-info">{{ servicios.3.nombre }}<br />
-            {{ servicios.3.precio }} </p>
-          <input name="ACarrito" type="button" value="COTIZAR" />
-        </div>
-
-        <!-- Producto 5 -->
-        <div class="product">
-          <img src="{{ servicios.4.imagen }}" alt="Imagen del producto 5" />
-          <p class="product-info">{{ servicios.4.nombre }}<br />
-            {{ servicios.4.precio }} </p>
-          <input name="ACarrito" type="button" value="COTIZAR" />
-        </div>
-
-
-                <!-- Producto 6 -->
-        <div class="product">
-          <img src="{{ servicios.5.imagen }}" alt="Imagen del producto 6" />
-          <p class="product-info">{{ servicios.5.nombre }}<br />
-            {{ servicios.5.precio }} </p>
-          <input name="ACarrito" type="button" value="COTIZAR" />
-        </div>
-
-        <!-- Producto 7 -->
-        <div class="product">
-          <img src="{{ servicios.6.imagen }}" alt="Imagen del producto 7" />
-          <p class="product-info">{{ servicios.6.nombre }}<br />
-            {{ servicios.6.precio }} </p>
-          <input name="ACarrito" type="button" value="COTIZAR" />
-        </div>
-
-        <!-- Producto 8 -->
-        <div class="product">
-          <img src="{{ servicios.7.imagen }}" alt="Imagen del producto 8" />
-          <p class="product-info">{{ servicios.7.nombre }}<br />
-            {{ servicios.7.precio }} </p>
-          <input name="ACarrito" type="button" value="COTIZAR" />
-        </div>
-
-        <!-- Producto 9 -->
-        <div class="product">
-          <img src="{{ servicios.8.imagen }}" alt="Imagen del producto 9" />
-          <p class="product-info">{{ servicios.8.nombre }}<br />
-            {{ servicios.8.precio }} </p>
-          <input name="ACarrito" type="button" value="COTIZAR" />
-        </div>
-
-        <!-- Producto 10 -->
-        <div class="product">
-          <img src="{{ servicios.9.imagen }}" alt="Imagen del producto 10" />
-          <p class="product-info">{{ servicios.9.nombre }}<br />
-            {{ servicios.9.precio }} </p>
-          <input name="ACarrito" type="button" value="COTIZAR" />
-        </div>
-
-        <!-- Producto 11 -->
-        <div class="product">
-          <img src="{{ servicios.10.imagen }}" alt="Imagen del producto 11" />
-          <p class="product-info">{{ servicios.10.nombre }}<br />
-            {{ servicios.10.precio }} </p>
-          <input name="ACarrito" type="button" value="COTIZAR" />
-        </div>
-
-        <!-- Producto 12 -->
-        <div class="product">
-          <img src="{{ servicios.11.imagen }}" alt="Imagen del producto 12" />
-          <p class="product-info">{{ servicios.11.nombre }}<br />
-            {{ servicios.11.precio }} </p>
-          <input name="ACarrito" type="button" value="COTIZAR" />
-        </div>
-
-        <!-- Producto 13 -->
-        <div class="product">
-          <img src="{{ servicios.12.imagen }}" alt="Imagen del producto 13" />
-          <p class="product-info">{{ servicios.12.nombre }}<br />
-            {{ servicios.12.precio }} </p>
-          <input name="ACarrito" type="button" value="COTIZAR" />
-        </div>
-
-        <!-- Producto 14 -->
-        <div class="product">
-          <img src="{{ servicios.13.imagen }}" alt="Imagen del producto 14" />
-          <p class="product-info">{{ servicios.13.nombre }}<br />
-            {{ servicios.13.precio }} </p>
-          <input name="ACarrito" type="button" value="COTIZAR" />
-        </div>
-
-        <!-- Producto 15 -->
-        <div class="product">
-          <img src="{{ servicios.14.imagen }}" alt="Imagen del producto 15" />
-          <p class="product-info">{{ servicios.14.nombre }}<br />
-            {{ servicios.14.precio }} </p>
-          <input name="ACarrito" type="button" value="COTIZAR" />
-        </div>
-
-        <!-- Producto 16 -->
-        <div class="product">
-          <img src="{{ servicios.15.imagen }}" alt="Imagen del producto 16" />
-          <p class="product-info">{{ servicios.15.nombre }}<br />
-            {{ servicios.15.precio }} </p>
-          <input name="ACarrito" type="button" value="COTIZAR" />
-        </div>
-                <!-- Producto 17 -->
-        <div class="product">
-          <img src="{{ servicios.16.imagen }}" alt="Imagen del producto 17" />
-          <p class="product-info">{{ servicios.16.nombre }}<br />
-            {{ servicios.16.precio }} </p>
-          <input name="ACarrito" type="button" value="COTIZAR" />
-        </div>
-
-        <!-- Producto 18 -->
-        <div class="product">
-          <img src="{{ servicios.17.imagen }}" alt="Imagen del producto 18" />
-          <p class="product-info">{{ servicios.17.nombre }}<br />
-            {{ servicios.17.precio }} </p>
-          <input name="ACarrito" type="button" value="COTIZAR" />
-        </div>
-
-        <!-- Producto 19 -->
-          <div class="product">
-            <img src="{{ servicios.18.imagen }}" alt="Imagen del producto" />
-            <p class="product-info">{{ servicios.18.nombre }}<br />
-              {{ servicios.18.precio }} </p>
-            <input name="ACarrito" type="button" value="COTIZAR" />
-          </div>
-          <!-- Producto 20 -->
-          <div class="product">
-            <img src="{{ servicios.19.imagen }}" alt="Imagen del producto" />
-            <p class="product-info">{{ servicios.19.nombre }}<br />
-              {{ servicios.19.precio }} </p>
-            <input name="ACarrito" type="button" value="COTIZAR" />
-          </div>
+      <h1>NUESTROS SERVICIOS "PM DESIGN"</h1>
+      <p>DISPONIBLES EN TODA BOLIVIA!!!!</p>
+      <p>(¡Lo que ves es lo que obtienes! Servicios que brillan tanto en la imagen como en la realidad)</p>
     </div>
 
-        </div>
-    </div>
-</body>
+        {% for servicio in servicios %}
+
+          <form action="http://127.0.0.1:8000/servicios/cotizacion/" method="GET">
+            <div class="product">
+              {% load static %}
+              <img src="{% static ''|add:servicio.imagen %}" alt="imagen del producto">
+              <p class="product-name">
+                {{ servicio.nombre }}
+              </p>
+              <p class="product-info">
+                {{ servicio.descripcion }}
+              </p>
+              <input type="hidden" name="id_servicio" value="{{ servicio.id }}">
+              <input type="submit" value="Cotizacion"/>
+            </div>
+          </form>
+
+        {% endfor %}
+  </body>
 
 </html>

@@ -86,9 +86,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'HOST': 'localhost',
         'PORT': 5432,
-        'NAME': 'PM', #nombre de la base de datos
+        'NAME': 'pm', #nombre de la base de datos
         'USER': 'postgres',
-        'PASSWORD': '12345',
+        'PASSWORD': '123',
 
     }
 }
@@ -134,3 +134,11 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+
+AUTHENTICATION_BACKENDS = [
+    'usuario.custom_auth_backend.CustomAuthBackend'
+    # ... otros backends si los tienes
+]
+AUTH_USER_MODEL = 'usuario.usuario'

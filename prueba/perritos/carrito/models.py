@@ -12,6 +12,7 @@ from django.db import models
 
 
 class Carrito(models.Model):
+    id = models.IntegerField(primary_key=True)
     fechacreacion = models.DateField()
     estado = models.CharField(max_length=50)
     usuario_email = models.ForeignKey('Usuario', models.DO_NOTHING, db_column='usuario_email')
@@ -64,15 +65,15 @@ class Compra(models.Model):
 
 class Cotizacion(models.Model):
     id = models.IntegerField(primary_key=True)
-    fechacreacion = models.DateField()
+    fechaCreacion = models.DateField()
     descripcion = models.CharField(max_length=100)
     estado = models.CharField(max_length=50)
-    fechafinalizacion = models.DateField(blank=True, null=True)
+    fechaFinalizacion = models.DateField(blank=True, null=True)
     servicios = models.ForeignKey('Servicios', models.DO_NOTHING)
     carrito = models.ForeignKey(Carrito, models.DO_NOTHING)
     precio = models.IntegerField()
-    usuario_email = models.ForeignKey('Usuario', models.DO_NOTHING, db_column='usuario_email')
-    encargadoventas_email = models.ForeignKey('Encargadoventas', models.DO_NOTHING, db_column='encargadoventas_email')
+    usuario_email = models.ForeignKey('Usuario', models.DO_NOTHING, related_name='%(class)s_usuarios', db_column='usuario_email')
+    encargadoVentas_email = models.ForeignKey('Usuario', models.DO_NOTHING, related_name='%(class)s_encargados', db_column='encargadoVentas_email')
 
     class Meta:
         managed = False

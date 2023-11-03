@@ -1,7 +1,6 @@
 from django.shortcuts import render, redirect
 from django.db.models import Sum
 
-
 # Create your views here.
 from .models import  Productos, Carrito, CarritoProductos, Usuario, Cotizacion, Servicios
 
@@ -65,7 +64,7 @@ def eliminar_servicio(request, idServicio):
     if request.method == 'POST':
         global cart
         m_servicio = Servicios.objects.get(id = idServicio)
-        cotizacion = Cotizacion.objects.get(servicios = m_servicio, carrito = cart)
+        cotizacion = Cotizacion.objects.get(servicios_id=m_servicio.id, carrito_id=cart.id)
         cotizacion.carrito = None
         cotizacion.save()
         return redirect('http://127.0.0.1:8000/carrito/carr/')

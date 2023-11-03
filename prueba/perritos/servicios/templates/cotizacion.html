@@ -11,8 +11,29 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin: 0px;
-            padding: 20px;
+        }
+
+        nav {
+            display: flex;
+            gap: 15px;
+        }
+
+        nav {
+            color: #f9e07f;
+            text-decoration: none;
+            font-size: 20px;
+            padding-right: 50px;
+            display: flex;
+        }
+
+        nav a{
+            align-self: flex-end;
+        }
+
+        h1 {
+            font-size: 42px;
+            color: #4a4a4a;
+            margin-top: 40px;
         }
 
         header {
@@ -26,49 +47,37 @@
 
         .service-container {
             background-color: #ffffff;
-            padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            max-width: 500px;
-            margin-bottom: 20px;
+            margin-right: auto;
+            margin-left: auto;
+            width: 1000px;
+            height: 250px;
         }
 
         .service-container img {
-            width: 100%;
-            max-height: 250px;
+            height: 100%;
             object-fit: cover;
-            border-radius: 8px;
-            margin-bottom: 20px;
+            border-radius: 5px;
+            margin-left: 0px;
+        }
+
+        .service-container .child{
+            float: left;
+        }
+
+        .child{
+            margin-left: 20px;
         }
 
         .service-description {
             background-color: #f4f4f4;
             padding: 10px;
             border-radius: 5px;
-            margin-bottom: 20px;
         }
-
-        .btn {
-            display: block;
-            padding: 10px 15px;
-            background-color: #3498db;
-            color: white;
-            text-align: center;
-            border-radius: 5px;
-            text-decoration: none;
-            margin-top: 10px;
-            transition: background-color 0.3s;
-        }
-
-        .btn:hover {
-            background-color: #2980b9;
-        }
-
 
         button, input[type="submit"] {
-            font-family: 'Roboto', sans-serif;
-            padding: 15px 240px;
+            font-family: 'Arial', sans-serif;
             background-color: #007BFF;
             color: #fff;
             border: none;
@@ -83,13 +92,13 @@
         }
 
         
-        textarea {
+        .service-container .child textarea {
             font-family: 'Roboto', sans-serif;
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 5px;
-            width: 100%;
-            resize: vertical; /* Allow vertical resizing */
+            width: 300px;
+            height: 150px;
         }
 
         header {
@@ -97,12 +106,13 @@
             padding: 15px 0;
             display: flex;
             justify-content: space-between;
-            align-items: center;
             color: #f9e07f;
           }
 
           header h1 {
-            font-size: 24px;
+            font-size: 30px; 
+            padding-left: 50px;
+            align-self:flex-start;
           }
           
           nav {
@@ -135,12 +145,11 @@
             color: #888;
             margin-top: 5px;
           }
+
     </style>
 </head>
-<body>
 
 <header>
-    <header>
         <h1>PERRITOS MALVADOS</h1>
         <nav>
             <a href="/usuario/usr/">Registrar</a>
@@ -151,22 +160,16 @@
             <a href="/servicios/ser/">Servicios</a>
             <a href="/carrito/carr/">Carrito</a>
         </nav>
-    </header>
 </header>
 
 <div class="service-container">
-    <h2>{{ nombre_servicio }}</h2>
-
+    <img src="{{imagen_servicio}}" alt="imagen del producto" class="child">
+    <h2 class="child">{{ nombre_servicio }}</h2>
     {% load static %}
-    <img src="{{imagen_servicio}}" alt="imagen del producto">
-
-    <form action="" method="POST">
+    <form action="" method="POST" class="child">
         {% csrf_token %}
-        <textarea placeholder="Descripción" name="descripcion"></textarea>
-        <br>
-        <input type="submit" value="Enviar">
+        <textarea placeholder="Descripción" name="descripcion" class="child"></textarea>
+        <input type="submit" value="Enviar" class="child">
     </form>
 </div>
-
-</body>
 </html>

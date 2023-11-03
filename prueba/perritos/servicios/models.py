@@ -26,3 +26,31 @@ class Cotizacion(models.Model):
     class Meta:
         managed = False
         db_table = 'cotizacion'
+
+
+class Carrito(models.Model):
+    fechacreacion = models.DateField()
+    estado = models.CharField(max_length=50)
+    usuario_email = models.ForeignKey('Usuario', models.DO_NOTHING, db_column='usuario_email')
+
+    class Meta:
+        managed = False
+        db_table = 'carrito'
+
+
+class Usuario(models.Model):
+    email = models.CharField(primary_key=True, max_length=50)
+    nombre = models.CharField(max_length=50)
+    apellido = models.CharField(max_length=50)
+    password = models.CharField(max_length=50)
+    telefono = models.IntegerField()
+    last_login = models.DateTimeField(blank=True, null=True)
+    is_superuser = models.BooleanField()
+    date_joined = models.DateTimeField()
+    is_active = models.BooleanField()
+    is_staff = models.BooleanField()
+    roles = models.CharField(max_length=50)
+
+    class Meta:
+        managed = False
+        db_table = 'usuario'

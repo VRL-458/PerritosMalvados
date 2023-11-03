@@ -1,11 +1,7 @@
 from django.contrib.auth import login, authenticate
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from .models import Servicios, Cotizacion
-import sys
-sys.path.append("..")
-from usuario.models import Usuario
-from carrito.models import Carrito
+from .models import Servicios, Cotizacion, Usuario, Carrito
 from django.utils import timezone
 
     
@@ -17,16 +13,21 @@ def cotizacion(request):
     id_servicio = request.GET.get('id_servicio', None)
     servicio = Servicios.objects.get(pk=id_servicio)
 
-    if request.method == "POST":
+    if request.method == 'POST':
         if request.user.is_authenticated:
+
             try:
                 user = request.user
                 user = Usuario.objects.get(email = user)
-                if user.roles == 'encargado':
-                    return HttpResponse("Usted es un ENCARGADO. No puede realizar cotizaciones!")
+                cart_exists = Carrito.objects.filter(usuario_email = str(user), estado = 'ACTIVO').exists()
                 
             except Usuario.DoesNotExist:
                 return redirect('http://127.0.0.1:8000/usuario/login/')
+            
+            if not cart_exists:
+                current_date = timezone.now().date()
+                Carrito.objects.create(usuario_email=user, estado='ACTIVO', fechacreacion = current_date)
+            cart = Carrito.objects.get(usuario_email=user, estado='ACTIVO')
 
             if request.POST.get('descripcion'):
                 cotizacion = Cotizacion()
@@ -35,6 +36,7 @@ def cotizacion(request):
                 cotizacion.usuario_email = user.email
                 cotizacion.encargadoVentas_email = None
                 cotizacion.save()
+
                 return redirect('http://127.0.0.1:8000/servicios/ser')
         else:
             return redirect('http://127.0.0.1:8000/usuario/login/')
@@ -54,13 +56,6 @@ def revisar_cotizaciones(request):
             _cotizacion = request.POST.get('id_servicio')
 
             _cotizacion_obj = Cotizacion.objects.get(id=_cotizacion)
-            _carrito_existe = Carrito.objects.filter(usuario_email=_cotizacion_obj.usuario_email, estado='ACTIVO').exists()
-            if not _carrito_existe:
-                usuario = Usuario.objects.filter(email=_cotizacion_obj.usuario_email)
-                print(usuario)
-                current_date = timezone.now().date()
-                Carrito.objects.create(usuario_email=usuario, estado='ACTIVO', fechacreacion = current_date)
-                
             _carrito = Carrito.objects.get(usuario_email=_cotizacion_obj.usuario_email, estado='ACTIVO')
 
             _cotizacion_obj.carrito_id = _carrito.id 
